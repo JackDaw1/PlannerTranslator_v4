@@ -1,0 +1,30 @@
+//
+//  Order.swift
+//  PlannerTranslator_v4
+//
+//  Created by Galina Iaroshenko on 05.01.2023.
+//
+
+import Foundation
+
+class OrderItem {
+    var deadline: Date?
+    var made: Bool?
+    var paid: Bool?
+    var name: String
+    var price: Double?
+    var numberOfSigns: Int?
+    var customer: String?
+    var time: Int64? //!!
+    
+    init(deadline: Date?, made: Bool?, paid: Bool?, name: String, price: Double?, numberOfSigns: Int?, customer:String?, time: Int64? = nil) {
+        self.deadline = deadline
+        self.made = made
+        self.paid = paid
+        self.name = name
+        self.price = price
+        self.numberOfSigns = numberOfSigns
+        self.customer = customer
+        self.time = time
+    }
+}
