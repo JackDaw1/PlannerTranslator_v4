@@ -1,17 +1,20 @@
 
 import UIKit
 
+struct SectionOrdersItem {
+    var orders: [OrderItem] = []
+    var date: Date
+}
+
 class OrderListViewController: UITableViewController {
     
     var presenter: OrderListPresenterProtocol?
-    var orders: [OrderItem] = [] {
+    var sectionsArray: [SectionOrdersItem] = [] {
         didSet {
             tableView.reloadData()
         }
     }
     
-    
-
     private func baseConfigure() {
         view.backgroundColor = UIColor.white
     }
@@ -25,17 +28,34 @@ class OrderListViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         presenter?.viewWillAppear()
     }
-
     
     private func setupView() {
         tableView.tableFooterView = UIView()
         tableView.register(OrderTableViewCell.self, forCellReuseIdentifier: "OrderTableViewCell")
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+", style: UIBarButtonItem.Style.plain, target: self, action: #selector(addTapped))
+        let newRightBarButtonItem = UIBarButtonItem(title: "+", style: UIBarButtonItem.Style.plain, target: self, action: #selector(addTapped))//
+        //  let newRightBarButtonItem = UIBarButtonItem(image: <#T##UIImage?#>, style: UIBarButtonItem.Style.plain, target: self, action: #selector(addTapped))
+        //Настройка текста кнопки если она использует текст
+        newRightBarButtonItem.setTitleTextAttributes(
+            [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 36.0),
+             NSAttributedString.Key.foregroundColor : UIColor.blue],
+            for: UIControl.State.normal)
+        
+        newRightBarButtonItem.setTitleTextAttributes(
+            [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 36.0),
+             NSAttributedString.Key.foregroundColor : UIColor.gray],
+            for: UIControl.State.selected)
+        //
+        navigationItem.rightBarButtonItem = newRightBarButtonItem
+    }
+    //определяем сколько секций в таблице
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        sectionsArray.count
     }
     
+    //настраиваем строки секции (в ней хранятся 1 хедер и множество ячеек (строк))
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return orders.count
+        return sectionsArray[section].orders.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,20 +64,26 @@ class OrderListViewController: UITableViewController {
             return UITableViewCell()
         }
         
-        let order = orders[indexPath.row]
-        cell.textLabel?.text = order.name
-        cell.detailTextLabel?.text = order.customer
+        let order = sectionsArray[indexPath.section].orders[indexPath.row]
+        cell.order = order
         return cell
     }
-    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        sectionsArray[section].date.toString()
+    }
+//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        <#code#>
+//    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let order = orders[indexPath.row]
+        let sectionObject = sectionsArray[indexPath.section]
+        let order = sectionObject.orders[indexPath.row]
         presenter?.showOrderDetail(order)
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let orderItem = orders[indexPath.row]
+            let sectionObject = sectionsArray[indexPath.section]
+            let orderItem = sectionObject.orders[indexPath.row]
             presenter?.removeOrder(orderItem)
         }
     }
@@ -77,8 +103,8 @@ func addTapped(_ sender: Any) {
 
 extension OrderListViewController: OrderListViewProtocol {
     
-    func showOrders(_ orders: [OrderItem]) {
-        self.orders = orders
+    func showOrders(_ sections: [SectionOrdersItem]) {
+        self.sectionsArray = sections
     }
     
     func showErrorMessage(_ message: String) {

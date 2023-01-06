@@ -8,6 +8,7 @@
 import Foundation
 
 class OrderItem {
+    var link: String?
     var deadline: Date?
     var made: Bool?
     var paid: Bool?
@@ -17,7 +18,15 @@ class OrderItem {
     var customer: String?
     var time: Int64? //!!
     
-    init(deadline: Date?, made: Bool?, paid: Bool?, name: String, price: Double?, numberOfSigns: Int?, customer:String?, time: Int64? = nil) {
+    init(link: String?,
+        deadline: Date?,
+        made: Bool?,
+        paid: Bool?,
+        name: String,
+        price: Double?,
+        numberOfSigns: Int?,
+        customer:String?,
+        time: Int64? = nil) {
         self.deadline = deadline
         self.made = made
         self.paid = paid

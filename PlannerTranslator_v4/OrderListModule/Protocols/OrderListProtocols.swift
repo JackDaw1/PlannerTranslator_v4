@@ -6,7 +6,7 @@ protocol OrderListViewProtocol: class {
     var presenter: OrderListPresenterProtocol? { get set }
     
     // PRESENTER -> VIEW
-    func showOrders(_ orders: [OrderItem])
+    func showOrders(_ sections: [SectionOrdersItem])
     func showErrorMessage(_ message: String)
 }
 
@@ -33,7 +33,7 @@ protocol OrderListInteractorInputProtocol: class {
     func deleteOrder(_ order: OrderItem)
 }
 
-protocol OrderListInteractorOutputProtocol: class {
+protocol OrderListInteractorOutputProtocol: AnyObject {
     
     // INTERACTOR -> PRESENTER
     func didAddOrder(_ order: OrderItem)
@@ -42,7 +42,7 @@ protocol OrderListInteractorOutputProtocol: class {
     func onError(message: String)
 }
 
-protocol OrderListRouterProtocol: class {
+protocol OrderListRouterProtocol: AnyObject {
     
     static func createOrderListModule() -> UIViewController
     

@@ -5,8 +5,6 @@ class MainTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBlue
-//        UITabBar.appearance().barTintColor = .systemBackground
-//          tabBar.tintColor = .label
         generateTabBar()
         setTabBarAppearance()
     }
@@ -14,11 +12,12 @@ class MainTabBarController: UITabBarController {
     
     
     fileprivate func createNavController(for rootViewController: UIViewController,
-                                                     title: String,
-                                                     image: UIImage) -> UIViewController {
+                                        title: String,
+                                        image:  UIImage) -> UIViewController {
            let navController = UINavigationController(rootViewController: rootViewController)
            navController.tabBarItem.title = title
-           navController.tabBarItem.image = image
+        navController.tabBarItem.image = image
+        navController.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10) //imageInsets - отступы картинки внутри UIImageView
            //navController.navigationBar.prefersLargeTitles = true
            rootViewController.navigationItem.title = title
            return navController
@@ -29,14 +28,24 @@ class MainTabBarController: UITabBarController {
         viewControllers = [
             createNavController(
                 for: OrderListRouter.createOrderListModule(),
+                title: "Заказы",
+                image: UIImage(named: "orders.png")!
+            ),
+            createNavController(
+                for: CustomerListRouter.createCustomerListModule(),
+                title: "Заказчики",
+                image: UIImage(named: "customer.png")!
+            ),
+            createNavController(
+                for: OrderListRouter.createOrderListModule(),
+                title: "Смета",
+                image: UIImage(named: "money.png")!
+            ),
+            createNavController(
+                for: OrderListRouter.createOrderListModule(),
                 title: "Профиль",
-                image: UIImage(systemName: "person.circle")!
+                image: UIImage(named: "profile.png")!
             )
-//            createNavController(
-//                for: PersonViewController(),
-//                title: "Профиль",
-//                image: UIImage(systemName: "person.circle")!
-//            )
         ]
     }
     
@@ -49,27 +58,12 @@ class MainTabBarController: UITabBarController {
   
     
     private func setTabBarAppearance() {
+        
         let positionOnX: CGFloat = 10
         let positionOnY: CGFloat = 14
+
         let width = tabBar.bounds.width - positionOnX * 2
         let height = tabBar.bounds.height + positionOnY * 2
-        
-        //let roundLayer = CAShapeLayer()
-        /*
-        let bezierPath = UIBezierPath(
-            roundedRect: CGRect(
-                x: positionOnX,
-                y: tabBar.bounds.minY - positionOnY,
-                width: width,
-                height: height
-            ),
-            cornerRadius: height / 2
-        )
-        
-        roundLayer.path = bezierPath.cgPath
-        
-        tabBar.layer.insertSublayer(roundLayer, at: 0)
-        */
         
         tabBar.itemWidth = width / 4
         tabBar.itemPositioning = .centered

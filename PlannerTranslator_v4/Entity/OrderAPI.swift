@@ -7,6 +7,7 @@
 //var customer: String?
 //var time: Int64? //!!
 //init(deadline: Date?, made: Bool?, paid: Bool?, name: String, price: Double?, numberOfSigns: Int?, customer:String?, time: Int64?)
+
 import Foundation
 
 class OrderAPI {
@@ -15,7 +16,12 @@ class OrderAPI {
     public static let shared = OrderAPI()
     
     public private(set) var orders: [OrderItem] = [
-        OrderItem(deadline: OrderAPI.createTestDate(value: "1996-12-19"), made: true, paid: true, name: "SwiftUI updates", price: 1000, numberOfSigns: 10038, customer: "Swiftbook", time: 138),
+        OrderItem(link: "https://proglib.io/", deadline: OrderAPI.createTestDate(value: "2023-01-06"), made: true, paid: true, name: "SwiftUI updates 06 1 part", price: 1000, numberOfSigns: 10038, customer: "proglib", time: 138),
+        OrderItem(link: "https://proglib.io/", deadline:
+        OrderAPI.createTestDate(value: "2023-01-06"), made: true, paid: true, name: "SwiftUI updates 06 2 part", price: 1000, numberOfSigns: 10038, customer: "proglib", time: 138),
+        OrderItem(link: "https://proglib.io/", deadline: OrderAPI.createTestDate(value: "2023-01-07"), made: true, paid: true, name: "SwiftUI news 07 1 part", price: 1000, numberOfSigns: 10038, customer: "Swiftbook", time: 138),
+        OrderItem(link: "https://proglib.io/", deadline: OrderAPI.createTestDate(value: "2023-01-07"), made: true, paid: true, name: "SwiftUI news 07 2 part", price: 1000, numberOfSigns: 10038, customer: "Swiftbook", time: 138),
+        OrderItem(link: "https://proglib.io/", deadline: OrderAPI.createTestDate(value: "2023-01-08"), made: true, paid: true, name: "SwiftUI features", price: 1000, numberOfSigns: 10038, customer: "Swiftbook", time: 138),
         
     ]
     

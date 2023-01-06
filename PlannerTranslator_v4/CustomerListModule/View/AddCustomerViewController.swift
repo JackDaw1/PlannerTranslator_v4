@@ -1,35 +1,33 @@
 
 import UIKit
 
-class AddOrderViewController: UIViewController, UIPickerViewDelegate {
+class AddCustomerViewController: UIViewController {
     
     var nameTextField: UITextField = UITextField()
-    var customerTextField: UITextField = UITextField()
+    var infoTextField: UITextField = UITextField()
+    var contact1TextField: UITextField = UITextField()
+    var contact2TextField: UITextField = UITextField()
     var saveButton: UIButton = UIButton()
-    var switchView: UISwitch = UISwitch()
-    var pickView: UIPickerView = UIPickerView()
     
-    var handler: ((OrderItem) -> Void)?
+    var handler: ((CustomerItem) -> Void)?
     
     private func baseConfigure() {
         view.backgroundColor = UIColor.white
         
         nameTextField.placeholder = "Enter name"
-        customerTextField.placeholder = "Enter customer name"
+        infoTextField.placeholder = "Enter customer name"
         saveButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
         saveButton.setTitleColor(UIColor.gray, for: UIControl.State.selected)
         
         saveButton.setTitle("Save", for: UIControl.State.normal)
         saveButton.setTitle("Save", for: UIControl.State.selected)
         saveButton.addTarget(self, action: #selector(save), for: UIControl.Event.touchUpInside)
-        
-        pickView.delegate = self
     }
     
     func setupConstraints() {
         [
             nameTextField,
-            customerTextField,
+            infoTextField,
             saveButton
         ].forEach { customView in
             view.addSubview(customView)
@@ -43,11 +41,11 @@ class AddOrderViewController: UIViewController, UIPickerViewDelegate {
             nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             nameTextField.heightAnchor.constraint(equalToConstant: 60),
             
-            customerTextField.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor),
-            customerTextField.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
-            customerTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor),
-            customerTextField.heightAnchor.constraint(equalToConstant: 60),
-            customerTextField.bottomAnchor.constraint(equalTo: saveButton.topAnchor),
+            infoTextField.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor),
+            infoTextField.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
+            infoTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor),
+            infoTextField.heightAnchor.constraint(equalToConstant: 60),
+            infoTextField.bottomAnchor.constraint(equalTo: saveButton.topAnchor),
             
             saveButton.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor),
             saveButton.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
@@ -64,9 +62,7 @@ class AddOrderViewController: UIViewController, UIPickerViewDelegate {
     @objc
     func save() {
         //TODO: настроить алерт сообщение о важности внесения имени
-        handler?(OrderItem(link: nil, deadline: nil, made: nil, paid: nil, name: nameTextField.text ?? "", price: nil, numberOfSigns: nil, customer: customerTextField.text))
-        switchView.isSelected
-        pickView.selectedRow(inComponent: 0)
+        handler?(CustomerItem(name: nameTextField.text ?? "", info: infoTextField.text, contact1: nameTextField.text, contact2: nameTextField.text))
         self.dismiss(animated: true)
     }
 //

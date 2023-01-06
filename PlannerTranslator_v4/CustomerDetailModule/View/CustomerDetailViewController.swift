@@ -1,8 +1,13 @@
-//init(deadline: Date?, made: Bool?, paid: Bool?, name: String, price: Double?, numberOfSigns: Int?, customer:String?, time: Int64?)
+//
+//  CustomerDetailViewController.swift
+//  PlannerTranslator_v4
+//
+//  Created by Galina Iaroshenko on 06.01.2023.
+//
 
 import UIKit
 
-class OrderDetailViewController: UIViewController {
+class CustomerDetailViewController: UIViewController {
     
     var titleLabel: UILabel = UILabel()
     var deadlineLabel: UILabel = UILabel()
@@ -16,7 +21,7 @@ class OrderDetailViewController: UIViewController {
     var deleteButton: UIButton = UIButton()
     var editButton: UIButton = UIButton()
     
-    var presenter: OrderDetailPresenterProtocol?
+    var presenter: CustomerDetailPresenterProtocol?
     
     private func baseConfigure() {
         view.backgroundColor = UIColor.white
@@ -88,13 +93,12 @@ class OrderDetailViewController: UIViewController {
     
 }
 
-extension OrderDetailViewController: OrderDetailViewProtocol {
+extension CustomerDetailViewController: CustomerDetailViewProtocol {
     
-    func showOrder(_ order: OrderItem) {
-        titleLabel.text = order.name
+    func showCustomer(_ customer: CustomerItem) {
+        titleLabel.text = customer.name
         //timeLabel.text = String(order.time)
         //customerLabel.text = order.customer
     }
     
 }
-

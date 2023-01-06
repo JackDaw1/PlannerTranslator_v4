@@ -13,7 +13,7 @@ class OrderDetailInteractor: OrderDetailInteractorInputProtocol {
         presenter?.didDeleteOrder()
     }
     
-    func editOrder(deadline: Date?, made: Bool?, paid: Bool?, name: String, price: Double?, numberOfSigns: Int?, customer: String?, time: Int64?) {
+    func editOrder(link: String?, deadline: Date?, made: Bool?, paid: Bool?, name: String, price: Double?, numberOfSigns: Int?, customer: String?, time: Int64?) {
         guard let orderItem = orderItem else { return }
         orderItem.name = name
         //orderItem.content = content

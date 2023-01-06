@@ -1,11 +1,6 @@
-
 import UIKit
 
 class OrderListRouter: OrderListRouterProtocol {
-    
-    static var storyboard: UIStoryboard {
-        return UIStoryboard(name: "Main", bundle: Bundle.main)
-    }
     
     static func createOrderListModule() -> UIViewController {
         let orderListViewController = OrderListViewController()
@@ -22,7 +17,6 @@ class OrderListRouter: OrderListRouterProtocol {
         return orderListViewController
     }
 
-    
     func presentOrderDetailScreen(from view: OrderListViewProtocol, for order: OrderItem) {
         
         let orderDetailVC = OrderDetailRouter.createOrderDetailRouterModule(with: order)
@@ -33,5 +27,6 @@ class OrderListRouter: OrderListRouterProtocol {
         
         viewVC.navigationController?.pushViewController(orderDetailVC, animated: true)
     }
+
     
 }

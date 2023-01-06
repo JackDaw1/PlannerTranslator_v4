@@ -33,7 +33,30 @@ extension OrderListPresenter: OrderListInteractorOutputProtocol {
     }
     
     func didRetrieveOrders(_ orders: [OrderItem]) {
-        view?.showOrders(orders)
+        guard !orders.isEmpty else { return }
+        
+        let array = orders.sorted { order1, order2 in
+            guard let deadline1 = order1.deadline, let deadline2 = order2.deadline else {
+                return false
+            }
+            return deadline1 < deadline2
+        }
+        
+        var sectionsResult = [SectionOrdersItem]()
+        var currentDate = orders.first?.deadline ?? Date()
+        var sectionItem: SectionOrdersItem = SectionOrdersItem(date: currentDate)
+        for order in array {
+            if let deadline = order.deadline, abs(deadline.timeIntervalSince(currentDate)) > 24*60*59 {
+                sectionsResult.append(sectionItem)
+                currentDate = order.deadline ?? Date()
+                sectionItem = SectionOrdersItem(date: currentDate)
+                sectionItem.orders.append(order)
+            } else {
+                sectionItem.orders.append(order)
+            }
+        }
+        sectionsResult.append(sectionItem)
+        view?.showOrders(sectionsResult)
     }
     
     func onError(message: String) {

@@ -1,21 +1,28 @@
+//
+//  CustomerTableViewCell.swift
+//  PlannerTranslator_v4
+//
+//  Created by Galina Iaroshenko on 06.01.2023.
+// customer
+// Customer
+
 import UIKit
 
-class OrderTableViewCell: UITableViewCell {
+class CustomerTableViewCell: UITableViewCell {
 
-    //???????????????????????????????
-    var order: OrderItem? {
+    var customer: CustomerItem? {
             didSet {
-                guard let orderItem = order else {return}
-                let nameOfArticle = orderItem.name
+                guard let customerItem = customer else {return}
+                let nameOfArticle = customerItem.name
                     //profileImageView.image = UIImage(named: name)
                     nameOfArticleLabel.text = nameOfArticle
                 
-                if let customer = orderItem.customer {
+                if let customer = customerItem.info {
                     profileImageView.image = UIImage(named: customer)
                     customerDetailedLabel.text = " \(customer) "
                 }
                 
-                if let price = orderItem.price {
+                if let price = customerItem.contact1 {
                     //countryImageView.image = UIImage(named: country)
                     priceDetailedLabel.text = " \(price) "
 
@@ -94,6 +101,10 @@ class OrderTableViewCell: UITableViewCell {
             
         customerDetailedLabel.topAnchor.constraint(equalTo:self.nameOfArticleLabel.bottomAnchor).isActive = true
         customerDetailedLabel.leadingAnchor.constraint(equalTo:self.containerView.leadingAnchor).isActive = true
+        /*
+        customerDetailedLabel.topAnchor.constraint(equalTo:self.nameOfArticleLabel.bottomAnchor).isActive = true
+        customerDetailedLabel.leadingAnchor.constraint(equalTo:self.containerView.leadingAnchor).isActive = true
+        */
         
         priceDetailedLabel.topAnchor.constraint(equalTo:self.customerDetailedLabel.bottomAnchor).isActive = true
         priceDetailedLabel.leadingAnchor.constraint(equalTo:self.containerView.leadingAnchor).isActive = true
@@ -105,3 +116,4 @@ class OrderTableViewCell: UITableViewCell {
         }
 
     }
+
