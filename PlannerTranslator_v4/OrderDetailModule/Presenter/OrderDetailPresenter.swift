@@ -14,7 +14,7 @@ class OrderDetailPresenter: OrderDetailPresenterProtocol {
         }
     }
     
-    func editOrder(link: String?, deadline: Date?, made: Bool?, paid: Bool?, name: String, price: Double?, numberOfSigns: Int?, customer:String?, time: Int64?) {
+    func editOrder(link: String?, deadline: Date?, made: Bool?, paid: Bool?, name: String, price: Double?, numberOfSigns: Int64?, customer:String?, time: Int64?) {
         
         interactor?.editOrder(link: link, deadline: deadline, made: made, paid: paid, name: name, price: price, numberOfSigns: numberOfSigns, customer: customer, time: time)
     }

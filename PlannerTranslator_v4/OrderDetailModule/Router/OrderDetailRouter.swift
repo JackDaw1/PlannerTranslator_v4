@@ -26,8 +26,4 @@ class OrderDetailRouter: OrderDetailRouterProtocol {
         return orderDetailVC
     }
     
-    /*static var storyboard: UIStoryboard {
-        return UIStoryboard(name: "Main", bundle: Bundle.main)
-    }*/
-    
 }

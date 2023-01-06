@@ -14,7 +14,7 @@ class OrderItem {
     var paid: Bool?
     var name: String
     var price: Double?
-    var numberOfSigns: Int?
+    var numberOfSigns: Int64?
     var customer: String?
     var time: Int64? //!!
     
@@ -24,7 +24,7 @@ class OrderItem {
         paid: Bool?,
         name: String,
         price: Double?,
-        numberOfSigns: Int?,
+        numberOfSigns: Int64?,
         customer:String?,
         time: Int64? = nil) {
         self.deadline = deadline

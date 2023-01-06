@@ -29,7 +29,7 @@ protocol CustomerDetailPresenterProtocol: class {
     // VIEW -> PRESENTER
     func viewDidLoad()
     //!!!!!!!!!!!!!!!!!!!!
-    func editCustomer(name: String?, info: String?, contact1: String?, contact2: String?)
+    func editCustomer(name: String, info: String?, contact1: String?, contact2: String?)
     func deleteCustomer()
 }
 

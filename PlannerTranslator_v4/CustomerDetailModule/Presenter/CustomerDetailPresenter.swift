@@ -20,7 +20,7 @@ class CustomerDetailPresenter: CustomerDetailPresenterProtocol {
         }
     }
     
-    func editCustomer(name: String?, info: String?, contact1: String?, contact2: String?) {
+    func editCustomer(name: String, info: String?, contact1: String?, contact2: String?) {
         
         interactor?.editCustomer(name: name ?? "", info: info, contact1: contact1, contact2: contact2)
     }

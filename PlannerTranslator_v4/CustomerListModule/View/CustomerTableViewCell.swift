@@ -17,6 +17,11 @@ class CustomerTableViewCell: UITableViewCell {
                     //profileImageView.image = UIImage(named: name)
                     nameOfArticleLabel.text = nameOfArticle
                 
+//                if let customer = orderItem.customer {
+//                    profileImageView.image = UIImage(named: customer)
+//                    customerDetailedLabel.text = " \(customer) "
+//                }
+                
                 if let customer = customerItem.info {
                     profileImageView.image = UIImage(named: customer)
                     customerDetailedLabel.text = " \(customer) "

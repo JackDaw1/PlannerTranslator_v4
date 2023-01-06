@@ -24,7 +24,7 @@
 		FE9552FF29668E1A001CE332 /* OrderListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9552EC29668E1A001CE332 /* OrderListProtocols.swift */; };
 		FE95530029668E1A001CE332 /* OrderListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9552EE29668E1A001CE332 /* OrderListInteractor.swift */; };
 		FE95530129668E1A001CE332 /* OrderListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9552F029668E1A001CE332 /* OrderListRouter.swift */; };
-		FE95530229668E1A001CE332 /* MainTabbarViewCOntroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9552F129668E1A001CE332 /* MainTabbarViewCOntroller.swift */; };
+		FE95530229668E1A001CE332 /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9552F129668E1A001CE332 /* MainTabbarViewController.swift */; };
 		FE95530329668E1A001CE332 /* OrderDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9552F429668E1A001CE332 /* OrderDetailPresenter.swift */; };
 		FE95530429668E1A001CE332 /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9552F629668E1A001CE332 /* OrderDetailViewController.swift */; };
 		FE95530529668E1A001CE332 /* OrderDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9552F829668E1A001CE332 /* OrderDetailProtocols.swift */; };
@@ -89,7 +89,7 @@
 		FE9552EC29668E1A001CE332 /* OrderListProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListProtocols.swift; sourceTree = "<group>"; };
 		FE9552EE29668E1A001CE332 /* OrderListInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListInteractor.swift; sourceTree = "<group>"; };
 		FE9552F029668E1A001CE332 /* OrderListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderListRouter.swift; sourceTree = "<group>"; };
-		FE9552F129668E1A001CE332 /* MainTabbarViewCOntroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarViewCOntroller.swift; sourceTree = "<group>"; };
+		FE9552F129668E1A001CE332 /* MainTabbarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabbarViewController.swift; sourceTree = "<group>"; };
 		FE9552F429668E1A001CE332 /* OrderDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailPresenter.swift; sourceTree = "<group>"; };
 		FE9552F629668E1A001CE332 /* OrderDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
 		FE9552F829668E1A001CE332 /* OrderDetailProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderDetailProtocols.swift; sourceTree = "<group>"; };
@@ -167,16 +167,16 @@
 				FE95532A2967CBE4001CE332 /* CustomerListModule */,
 				FE9553242967CB6C001CE332 /* CustomerDetailModule */,
 				FE91B1E82965657A0063ED03 /* Entity */,
-				FE9552F129668E1A001CE332 /* MainTabbarViewCOntroller.swift */,
+				FE9552F129668E1A001CE332 /* MainTabbarViewController.swift */,
 				FE91B1B5296564900063ED03 /* AppDelegate.swift */,
 				FE91B1B7296564900063ED03 /* SceneDelegate.swift */,
 				FE91B1B9296564900063ED03 /* ViewController.swift */,
+				FE9553342967F208001CE332 /* Helper.swift */,
 				FE91B1BB296564900063ED03 /* Main.storyboard */,
 				FE91B1C1296564910063ED03 /* Assets.xcassets */,
 				FE91B1C3296564910063ED03 /* LaunchScreen.storyboard */,
 				FE91B1C6296564910063ED03 /* Info.plist */,
 				FE91B1BE296564900063ED03 /* PlannerTranslator_v4.xcdatamodeld */,
-				FE9553342967F208001CE332 /* Helper.swift */,
 			);
 			path = PlannerTranslator_v4;
 			sourceTree = "<group>";
@@ -569,7 +569,7 @@
 				FE955319296745E0001CE332 /* CustomerDetailViewController.swift in Sources */,
 				FE95530B296697A4001CE332 /* OrderTableViewCell.swift in Sources */,
 				FE9552FD29668E1A001CE332 /* OrderListPresenter.swift in Sources */,
-				FE95530229668E1A001CE332 /* MainTabbarViewCOntroller.swift in Sources */,
+				FE95530229668E1A001CE332 /* MainTabbarViewController.swift in Sources */,
 				FE9552E329667974001CE332 /* OrderItem.swift in Sources */,
 				FE95531329674026001CE332 /* CustomerListRouter.swift in Sources */,
 				FE95531D29674770001CE332 /* CustomerDetailRouter.swift in Sources */,
