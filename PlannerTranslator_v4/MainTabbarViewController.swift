@@ -42,7 +42,10 @@ class MainTabBarController: UITabBarController {
                 image: UIImage(named: "money.png")!
             ),
             createNavController(
-                for: OrderListRouter.createOrderListModule(),
+                for: ProfileDetailRouter.createProfileListModule(),
+                
+                //for: OrderListRouter.createOrderListModule(),
+
                 title: "Профиль",
                 image: UIImage(named: "profile.png")!
             )

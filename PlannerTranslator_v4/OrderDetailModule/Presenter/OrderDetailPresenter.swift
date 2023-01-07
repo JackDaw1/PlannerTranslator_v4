@@ -1,5 +1,4 @@
-//init(deadline: Date?, made: Bool?, paid: Bool?, name: String, price: Double?, numberOfSigns: Int?, customer:String?, time: Int64?)
-import UIKit
+import Foundation
 
 class OrderDetailPresenter: OrderDetailPresenterProtocol {
 
