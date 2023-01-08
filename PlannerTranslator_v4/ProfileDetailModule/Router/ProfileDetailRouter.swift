@@ -16,38 +16,21 @@ class ProfileDetailRouter: ProfileDetailRouterProtocol {
         viewVC.navigationController?.popViewController(animated: true)
     }
     
-    static func createProfileDetailRouterModule(with profile: ProfileItem) -> UIViewController {
-        
+    static func createProfileDetailRouterModule() -> UIViewController {
+
         let profileDetailVC = ProfileDetailViewController()
         let presenter: ProfileDetailPresenterProtocol & ProfileDetailInteractorOutputProtocol = ProfileDetailPresenter()
         profileDetailVC.presenter = presenter
         presenter.view = profileDetailVC
         let interactor: ProfileDetailInteractorInputProtocol = ProfileDetailInteractor()
-        interactor.profileItem = profile
+        interactor.profileItem = ProfileAPI.shared.profile
         interactor.presenter = presenter
         presenter.interactor = interactor
         let router: ProfileDetailRouterProtocol = ProfileDetailRouter()
         presenter.router = router
-        
+
         return profileDetailVC
     }
-
-    
-    static func createProfileListModule() -> UIViewController {
-        let profileDetailViewController = ProfileDetailViewController()
-        let presenter: ProfileDetailPresenterProtocol & ProfileDetailInteractorOutputProtocol = ProfileDetailPresenter()
-        let interactor: ProfileDetailInteractorInputProtocol = ProfileDetailInteractor()
-        let router = ProfileDetailRouter()
-        
-        profileDetailViewController.presenter = presenter
-        presenter.view = profileDetailViewController
-        presenter.interactor = interactor
-        presenter.router = router
-        interactor.presenter = presenter
-        
-        return profileDetailViewController
-    }
-
     
 }
 

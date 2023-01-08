@@ -27,6 +27,10 @@ class OrderListPresenter: OrderListPresenterProtocol {
 }
 
 extension OrderListPresenter: OrderListInteractorOutputProtocol {
+    func didRemoveOrder(_ order: OrderItem) {
+        
+    }
+    
     
     func didAddOrder(_ order: OrderItem) {
         interactor?.retrieveOrders()
@@ -35,7 +39,9 @@ extension OrderListPresenter: OrderListInteractorOutputProtocol {
     func didRetrieveOrders(_ orders: [OrderItem]) {
         guard !orders.isEmpty else { return }
         
-        let array = orders.sorted { order1, order2 in
+        let array = orders
+            .filter({ !$0.made })
+            .sorted { order1, order2 in
             guard let deadline1 = order1.deadline, let deadline2 = order2.deadline else {
                 return false
             }
@@ -61,9 +67,5 @@ extension OrderListPresenter: OrderListInteractorOutputProtocol {
     
     func onError(message: String) {
         view?.showErrorMessage(message)
-    }
-    
-    func didRemoveOrder(_ order: OrderItem) {
-        interactor?.retrieveOrders()
     }
 }

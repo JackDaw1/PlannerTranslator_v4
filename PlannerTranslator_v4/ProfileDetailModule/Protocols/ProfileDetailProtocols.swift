@@ -34,9 +34,9 @@ protocol ProfileDetailInteractorOutputProtocol: class {
     func didEditProfile(_ profile: ProfileItem)
 }
 
-protocol ProfileDetailRouterProtocol: class {
+protocol ProfileDetailRouterProtocol: AnyObject {
     
-    static func createProfileDetailRouterModule(with profile: ProfileItem) -> UIViewController
+    static func createProfileDetailRouterModule() -> UIViewController
     
     // PRESENTER -> ROUTER
     func navigateBackToListViewController(from view: ProfileDetailViewProtocol)

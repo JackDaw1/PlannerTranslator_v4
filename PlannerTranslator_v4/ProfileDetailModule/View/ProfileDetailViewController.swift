@@ -20,6 +20,9 @@ class ProfileDetailViewController: UIViewController {
     
     private func baseConfigure() {
         view.backgroundColor = UIColor.white
+        nameLabel.textColor = UIColor.black
+        contact1Label.textColor = UIColor.black
+        contact2Label.textColor = UIColor.black
     }
     
     func setupConstraints() {
@@ -38,16 +41,18 @@ class ProfileDetailViewController: UIViewController {
             nameLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
             nameLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             nameLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-            nameLabel.heightAnchor.constraint(equalToConstant: 100),
+            nameLabel.heightAnchor.constraint(equalToConstant: 60),
             
             contact1Label.leadingAnchor.constraint(equalTo: nameLabel.leadingAnchor),
             contact1Label.trailingAnchor.constraint(equalTo: nameLabel.trailingAnchor),
             contact1Label.topAnchor.constraint(equalTo: nameLabel.bottomAnchor),
             contact1Label.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor),
+            contact1Label.heightAnchor.constraint(equalToConstant: 60),
             
             contact2Label.leadingAnchor.constraint(equalTo: contact1Label.leadingAnchor),
             contact2Label.trailingAnchor.constraint(equalTo: contact1Label.trailingAnchor),
             contact2Label.topAnchor.constraint(equalTo: contact1Label.bottomAnchor),
+            contact2Label.heightAnchor.constraint(equalToConstant: 60),
             contact2Label.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor),
      
         ])
@@ -60,27 +65,6 @@ class ProfileDetailViewController: UIViewController {
         
         presenter?.viewDidLoad()
     }
-    
-//    func deleteTapped(_ sender: Any) {
-//        presenter?.deleteOrder()
-//    }
-//
-//    func editTapped(_ sender: Any) {
-//        let alertController = UIAlertController(title: "Edit Order Item", message: "Enter title and content", preferredStyle: .alert)
-//
-//        alertController.addTextField { $0.text = self.titleLabel.text }
-//        alertController.addTextField { $0.text = self.contentLabel.text }
-//        alertController.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { [weak self](_) in
-//            let titleText = alertController.textFields![0].text ?? ""
-//            let contentText = alertController.textFields![1].text ?? ""
-//            guard !titleText.isEmpty else { return }
-//            self?.presenter?.editOrder(title: titleText, content: contentText)
-//        }))
-//
-//        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//        present(alertController, animated: true, completion: nil)
-//
-//    }
     
 }
 

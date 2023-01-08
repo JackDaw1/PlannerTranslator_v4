@@ -24,8 +24,6 @@ class ProfileDetailPresenter: ProfileDetailPresenterProtocol {
         
         interactor?.editProfile(name: name, contact1: contact1, contact2: contact2)
     }
-
-    
 }
 
 extension ProfileDetailPresenter: ProfileDetailInteractorOutputProtocol {

@@ -10,7 +10,7 @@ import Foundation
 class OrderItem {
     var link: String?
     var deadline: Date?
-    var made: Bool?
+    var made: Bool
     var paid: Bool?
     var name: String
     var price: Double?
@@ -20,7 +20,7 @@ class OrderItem {
     
     init(link: String?,
         deadline: Date?,
-        made: Bool?,
+        made: Bool = false,
         paid: Bool?,
         name: String,
         price: Double?,

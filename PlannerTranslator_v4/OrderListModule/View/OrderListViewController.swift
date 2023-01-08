@@ -68,6 +68,9 @@ class OrderListViewController: UITableViewController {
         cell.order = order
         return cell
     }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        UITableView.automaticDimension
+    }
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         sectionsArray[section].date.toString()
     }
