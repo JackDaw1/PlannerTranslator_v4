@@ -40,21 +40,22 @@ extension OrderListPresenter: OrderListInteractorOutputProtocol {
         guard !orders.isEmpty else { return }
         
         let array = orders
-            .filter({ !$0.made })
+            .filter({ $0.made != true })
             .sorted { order1, order2 in
-            guard let deadline1 = order1.deadline, let deadline2 = order2.deadline else {
+                guard let deadline1 = order1.deadline?.toDate(), let deadline2 = order2.deadline?.toDate() else {
                 return false
             }
             return deadline1 < deadline2
         }
         
         var sectionsResult = [SectionOrdersItem]()
-        var currentDate = orders.first?.deadline ?? Date()
+        let deadline = orders.first?.deadline?.toDate()
+        var currentDate = deadline ?? Date()
         var sectionItem: SectionOrdersItem = SectionOrdersItem(date: currentDate)
         for order in array {
-            if let deadline = order.deadline, abs(deadline.timeIntervalSince(currentDate)) > 24*60*59 {
+            if let deadline = order.deadline?.toDate(), abs(deadline.timeIntervalSince(currentDate)) > 24*60*59 {
                 sectionsResult.append(sectionItem)
-                currentDate = order.deadline ?? Date()
+                currentDate = order.deadline?.toDate() ?? Date()
                 sectionItem = SectionOrdersItem(date: currentDate)
                 sectionItem.orders.append(order)
             } else {

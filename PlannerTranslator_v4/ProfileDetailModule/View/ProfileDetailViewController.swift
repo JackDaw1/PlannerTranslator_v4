@@ -17,12 +17,21 @@ class ProfileDetailViewController: UIViewController {
     var shareButton: UIButton = UIButton()
     
     var presenter: ProfileDetailPresenterProtocol?
+    var enableForEdit: Bool = false {
+        didSet {
+//            priceTextField.isEnabled = enableForEdit
+        }
+    }
     
     private func baseConfigure() {
         view.backgroundColor = UIColor.white
         nameLabel.textColor = UIColor.black
         contact1Label.textColor = UIColor.black
         contact2Label.textColor = UIColor.black
+        
+//        priceTextField.text = "Test"
+//        priceTextField.isEnabled = enableForEdit
+        //priceTextField.isEnabled//доступность для редактирования
     }
     
     func setupConstraints() {

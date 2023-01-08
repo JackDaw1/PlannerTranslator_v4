@@ -16,12 +16,12 @@ class OrderAPI {
     public static let shared = OrderAPI()
     
     public private(set) var orders: [OrderItem] = [
-        OrderItem(link: "https://proglib.io/", deadline: OrderAPI.createTestDate(value: "2023-01-06"), made: false, paid: true, name: "SwiftUI updates 06 1 part", price: 1000, numberOfSigns: 10038, customer: "proglib", time: 138),
+        OrderItem(link: "https://proglib.io/", deadline: "2023-01-06", made: false, paid: true, name: "SwiftUI updates 06 1 part", price: 1000, numberOfSigns: 10038, customer: "proglib", time: 138),
         OrderItem(link: "https://proglib.io/", deadline:
-        OrderAPI.createTestDate(value: "2023-01-06"), made: false, paid: true, name: "SwiftUI updates 06 2 part", price: 1000, numberOfSigns: 10038, customer: "proglib", time: 138),
-        OrderItem(link: "https://proglib.io/", deadline: OrderAPI.createTestDate(value: "2023-01-07"), made: false, paid: true, name: "SwiftUI news 07 1 part", price: 1000, numberOfSigns: 10038, customer: "swiftbook", time: 138),
-        OrderItem(link: "https://proglib.io/", deadline: OrderAPI.createTestDate(value: "2023-01-07"), made: false, paid: true, name: "SwiftUI news 07 2 part", price: 1000, numberOfSigns: 10038, customer: "swiftbook", time: 138),
-        OrderItem(link: "https://proglib.io/", deadline: OrderAPI.createTestDate(value: "2023-01-08"), made: false, paid: true, name: "SwiftUI features", price: 1000, numberOfSigns: 10038, customer: "swiftbook", time: 138),
+        "2023-01-06", made: false, paid: true, name: "SwiftUI updates 06 2 part", price: 1000, numberOfSigns: 10038, customer: "proglib", time: 138),
+        OrderItem(link: "https://proglib.io/", deadline: "2023-01-07", made: false, paid: true, name: "SwiftUI news 07 1 part", price: 1000, numberOfSigns: 10038, customer: "swiftbook", time: 138),
+        OrderItem(link: "https://proglib.io/", deadline: "2023-01-07", made: false, paid: true, name: "SwiftUI news 07 2 part", price: 1000, numberOfSigns: 10038, customer: "swiftbook", time: 138),
+        OrderItem(link: "https://proglib.io/", deadline: "2023-01-08", made: false, paid: true, name: "SwiftUI features", price: 1000, numberOfSigns: 10038, customer: "swiftbook", time: 138),
         
     ]
     
@@ -30,7 +30,7 @@ class OrderAPI {
     }
     
     func removeOrder(_ order: OrderItem) {
-        if let index = orders.firstIndex(where: { $0 === order }) {
+        if let index = orders.firstIndex(where: { $0.name == order.name }) {
             orders.remove(at: index)
         }
     }

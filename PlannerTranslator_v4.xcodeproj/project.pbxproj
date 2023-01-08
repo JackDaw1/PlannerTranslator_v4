@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C87F9F5D32C61B34E27926B /* libPods-PlannerTranslator_v4.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A10D6771522933A26417839 /* libPods-PlannerTranslator_v4.a */; };
+		FE4DE144296AAF350055FCE1 /* MoyaRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE13F296AAF350055FCE1 /* MoyaRequestType.swift */; };
+		FE4DE145296AAF350055FCE1 /* MoyaRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE13F296AAF350055FCE1 /* MoyaRequestType.swift */; };
+		FE4DE146296AAF350055FCE1 /* MoyaRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE13F296AAF350055FCE1 /* MoyaRequestType.swift */; };
+		FE4DE147296AAF350055FCE1 /* MoyaNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE140296AAF350055FCE1 /* MoyaNetworkManager.swift */; };
+		FE4DE148296AAF350055FCE1 /* MoyaNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE140296AAF350055FCE1 /* MoyaNetworkManager.swift */; };
+		FE4DE149296AAF350055FCE1 /* MoyaNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE140296AAF350055FCE1 /* MoyaNetworkManager.swift */; };
+		FE4DE14A296AAF350055FCE1 /* OrdersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE141296AAF350055FCE1 /* OrdersModel.swift */; };
+		FE4DE14B296AAF350055FCE1 /* OrdersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE141296AAF350055FCE1 /* OrdersModel.swift */; };
+		FE4DE14C296AAF350055FCE1 /* OrdersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE141296AAF350055FCE1 /* OrdersModel.swift */; };
+		FE4DE14D296AAF350055FCE1 /* MoyaRequestType+TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE142296AAF350055FCE1 /* MoyaRequestType+TestData.swift */; };
+		FE4DE14E296AAF350055FCE1 /* MoyaRequestType+TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE142296AAF350055FCE1 /* MoyaRequestType+TestData.swift */; };
+		FE4DE14F296AAF350055FCE1 /* MoyaRequestType+TestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE142296AAF350055FCE1 /* MoyaRequestType+TestData.swift */; };
+		FE4DE150296AAF350055FCE1 /* ResponseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE143296AAF350055FCE1 /* ResponseAPI.swift */; };
+		FE4DE151296AAF350055FCE1 /* ResponseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE143296AAF350055FCE1 /* ResponseAPI.swift */; };
+		FE4DE152296AAF350055FCE1 /* ResponseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE143296AAF350055FCE1 /* ResponseAPI.swift */; };
 		FE91B1B6296564900063ED03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE91B1B5296564900063ED03 /* AppDelegate.swift */; };
 		FE91B1B8296564900063ED03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE91B1B7296564900063ED03 /* SceneDelegate.swift */; };
 		FE91B1BA296564900063ED03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE91B1B9296564900063ED03 /* ViewController.swift */; };
@@ -86,6 +102,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2237F6832FEEEAAF04EAD148 /* Pods-PlannerTranslator_v4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlannerTranslator_v4.debug.xcconfig"; path = "Target Support Files/Pods-PlannerTranslator_v4/Pods-PlannerTranslator_v4.debug.xcconfig"; sourceTree = "<group>"; };
+		3A10D6771522933A26417839 /* libPods-PlannerTranslator_v4.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PlannerTranslator_v4.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		55647A99E1CAA7F2BF111A93 /* Pods-PlannerTranslator_v4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlannerTranslator_v4.release.xcconfig"; path = "Target Support Files/Pods-PlannerTranslator_v4/Pods-PlannerTranslator_v4.release.xcconfig"; sourceTree = "<group>"; };
+		FE4DE13F296AAF350055FCE1 /* MoyaRequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaRequestType.swift; sourceTree = "<group>"; };
+		FE4DE140296AAF350055FCE1 /* MoyaNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaNetworkManager.swift; sourceTree = "<group>"; };
+		FE4DE141296AAF350055FCE1 /* OrdersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersModel.swift; sourceTree = "<group>"; };
+		FE4DE142296AAF350055FCE1 /* MoyaRequestType+TestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "MoyaRequestType+TestData.swift"; sourceTree = "<group>"; };
+		FE4DE143296AAF350055FCE1 /* ResponseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseAPI.swift; sourceTree = "<group>"; };
 		FE91B1B2296564900063ED03 /* PlannerTranslator_v4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlannerTranslator_v4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE91B1B5296564900063ED03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE91B1B7296564900063ED03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -157,6 +181,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C87F9F5D32C61B34E27926B /* libPods-PlannerTranslator_v4.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,13 +202,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7BD9E4DD6B9613466A3CA66C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2237F6832FEEEAAF04EAD148 /* Pods-PlannerTranslator_v4.debug.xcconfig */,
+				55647A99E1CAA7F2BF111A93 /* Pods-PlannerTranslator_v4.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CD15366AA0F05E94FEA9B048 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A10D6771522933A26417839 /* libPods-PlannerTranslator_v4.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE4DE13D296AAEBE0055FCE1 /* PlannerTranslator_v4Network */ = {
+			isa = PBXGroup;
+			children = (
+				FE4DE13E296AAF350055FCE1 /* Moya */,
+			);
+			path = PlannerTranslator_v4Network;
+			sourceTree = "<group>";
+		};
+		FE4DE13E296AAF350055FCE1 /* Moya */ = {
+			isa = PBXGroup;
+			children = (
+				FE4DE13F296AAF350055FCE1 /* MoyaRequestType.swift */,
+				FE4DE140296AAF350055FCE1 /* MoyaNetworkManager.swift */,
+				FE4DE141296AAF350055FCE1 /* OrdersModel.swift */,
+				FE4DE142296AAF350055FCE1 /* MoyaRequestType+TestData.swift */,
+				FE4DE143296AAF350055FCE1 /* ResponseAPI.swift */,
+			);
+			path = Moya;
+			sourceTree = "<group>";
+		};
 		FE91B1A9296564900063ED03 = {
 			isa = PBXGroup;
 			children = (
+				FE4DE13D296AAEBE0055FCE1 /* PlannerTranslator_v4Network */,
 				FE91B1B4296564900063ED03 /* PlannerTranslator_v4 */,
 				FE91B1CE296564910063ED03 /* PlannerTranslator_v4Tests */,
 				FE91B1D8296564910063ED03 /* PlannerTranslator_v4UITests */,
 				FE91B1B3296564900063ED03 /* Products */,
+				7BD9E4DD6B9613466A3CA66C /* Pods */,
+				CD15366AA0F05E94FEA9B048 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -629,6 +694,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE91B1DF296564910063ED03 /* Build configuration list for PBXNativeTarget "PlannerTranslator_v4" */;
 			buildPhases = (
+				9277B668478ECDFA00EC3591 /* [CP] Check Pods Manifest.lock */,
 				FE91B1AE296564900063ED03 /* Sources */,
 				FE91B1AF296564900063ED03 /* Frameworks */,
 				FE91B1B0296564900063ED03 /* Resources */,
@@ -748,11 +814,37 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9277B668478ECDFA00EC3591 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlannerTranslator_v4-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FE91B1AE296564900063ED03 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE4DE14A296AAF350055FCE1 /* OrdersModel.swift in Sources */,
 				FE9553512969C964001CE332 /* IncomeDetailPresenter.swift in Sources */,
 				FE9553572969CC6F001CE332 /* IncomeDetailRouter.swift in Sources */,
 				FE9553152967416D001CE332 /* CustomerDetailProtocols.swift in Sources */,
@@ -764,6 +856,7 @@
 				FE955311296738FB001CE332 /* CustomerAPI.swift in Sources */,
 				FE95530429668E1A001CE332 /* OrderDetailViewController.swift in Sources */,
 				FE9553632969CD3F001CE332 /* IncomeTableViewCell.swift in Sources */,
+				FE4DE144296AAF350055FCE1 /* MoyaRequestType.swift in Sources */,
 				FE95530929668EBD001CE332 /* OrderAPI.swift in Sources */,
 				FE9553552969CC40001CE332 /* IncomeDetailInteractor.swift in Sources */,
 				FE9553232967C9D7001CE332 /* CustomerListInteractor.swift in Sources */,
@@ -775,6 +868,7 @@
 				FE9553312967CCE9001CE332 /* CustomerTableViewCell.swift in Sources */,
 				FE9553332967CD69001CE332 /* AddCustomerViewController.swift in Sources */,
 				FE95530029668E1A001CE332 /* OrderListInteractor.swift in Sources */,
+				FE4DE147296AAF350055FCE1 /* MoyaNetworkManager.swift in Sources */,
 				FE955347296989E0001CE332 /* ProfileDetailInteractor.swift in Sources */,
 				FE955319296745E0001CE332 /* CustomerDetailViewController.swift in Sources */,
 				FE95530B296697A4001CE332 /* OrderTableViewCell.swift in Sources */,
@@ -783,6 +877,7 @@
 				FE9552FD29668E1A001CE332 /* OrderListPresenter.swift in Sources */,
 				FE9553592969CC9F001CE332 /* IncomeDetailViewController.swift in Sources */,
 				FE95534329696C93001CE332 /* ProfileItem.swift in Sources */,
+				FE4DE150296AAF350055FCE1 /* ResponseAPI.swift in Sources */,
 				FE95530229668E1A001CE332 /* MainTabbarViewController.swift in Sources */,
 				FE9552E329667974001CE332 /* OrderItem.swift in Sources */,
 				FE95531329674026001CE332 /* CustomerListRouter.swift in Sources */,
@@ -802,6 +897,7 @@
 				FE95533929696688001CE332 /* ProfileDetailPresenter.swift in Sources */,
 				FE9553212967492E001CE332 /* CustomerListProtocols.swift in Sources */,
 				FE95531F2967481B001CE332 /* CustomerListPresenter.swift in Sources */,
+				FE4DE14D296AAF350055FCE1 /* MoyaRequestType+TestData.swift in Sources */,
 				FE95530F296738A4001CE332 /* CustomerListViewController.swift in Sources */,
 				FE91B1B8296564900063ED03 /* SceneDelegate.swift in Sources */,
 				FE9552FE29668E1A001CE332 /* OrderListViewController.swift in Sources */,
@@ -813,7 +909,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE4DE14B296AAF350055FCE1 /* OrdersModel.swift in Sources */,
+				FE4DE148296AAF350055FCE1 /* MoyaNetworkManager.swift in Sources */,
 				FE91B1D0296564910063ED03 /* PlannerTranslator_v4Tests.swift in Sources */,
+				FE4DE151296AAF350055FCE1 /* ResponseAPI.swift in Sources */,
+				FE4DE14E296AAF350055FCE1 /* MoyaRequestType+TestData.swift in Sources */,
+				FE4DE145296AAF350055FCE1 /* MoyaRequestType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,8 +922,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE4DE14C296AAF350055FCE1 /* OrdersModel.swift in Sources */,
+				FE4DE14F296AAF350055FCE1 /* MoyaRequestType+TestData.swift in Sources */,
 				FE91B1DA296564910063ED03 /* PlannerTranslator_v4UITests.swift in Sources */,
 				FE91B1DC296564910063ED03 /* PlannerTranslator_v4UITestsLaunchTests.swift in Sources */,
+				FE4DE149296AAF350055FCE1 /* MoyaNetworkManager.swift in Sources */,
+				FE4DE152296AAF350055FCE1 /* ResponseAPI.swift in Sources */,
+				FE4DE146296AAF350055FCE1 /* MoyaRequestType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -977,6 +1083,7 @@
 		};
 		FE91B1E0296564910063ED03 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2237F6832FEEEAAF04EAD148 /* Pods-PlannerTranslator_v4.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1004,6 +1111,7 @@
 		};
 		FE91B1E1296564910063ED03 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55647A99E1CAA7F2BF111A93 /* Pods-PlannerTranslator_v4.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

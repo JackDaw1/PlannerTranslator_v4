@@ -4,7 +4,7 @@ import UIKit
 class AddOrderViewController: UIViewController, UIPickerViewDelegate {
     
     var nameTextField: UITextField = UITextField()
-    var customerTextField: UITextField = UITextField()
+    var priceTextField: UITextField = UITextField()
     var saveButton: UIButton = UIButton()
     var switchView: UISwitch = UISwitch()
     var pickView: UIPickerView = UIPickerView()
@@ -15,7 +15,8 @@ class AddOrderViewController: UIViewController, UIPickerViewDelegate {
         view.backgroundColor = UIColor.white
         
         nameTextField.placeholder = "Enter name"
-        customerTextField.placeholder = "Enter customer name"
+        priceTextField.placeholder = "Enter price"
+        priceTextField.keyboardType = UIKeyboardType.numberPad
         saveButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
         saveButton.setTitleColor(UIColor.gray, for: UIControl.State.selected)
         
@@ -29,7 +30,7 @@ class AddOrderViewController: UIViewController, UIPickerViewDelegate {
     func setupConstraints() {
         [
             nameTextField,
-            customerTextField,
+            priceTextField,
             saveButton
         ].forEach { customView in
             view.addSubview(customView)
@@ -43,11 +44,11 @@ class AddOrderViewController: UIViewController, UIPickerViewDelegate {
             nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
             nameTextField.heightAnchor.constraint(equalToConstant: 60),
             
-            customerTextField.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor),
-            customerTextField.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
-            customerTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor),
-            customerTextField.heightAnchor.constraint(equalToConstant: 60),
-            customerTextField.bottomAnchor.constraint(equalTo: saveButton.topAnchor),
+            priceTextField.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor),
+            priceTextField.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
+            priceTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor),
+            priceTextField.heightAnchor.constraint(equalToConstant: 60),
+            priceTextField.bottomAnchor.constraint(equalTo: saveButton.topAnchor),
             
             saveButton.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor),
             saveButton.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
@@ -64,7 +65,7 @@ class AddOrderViewController: UIViewController, UIPickerViewDelegate {
     @objc
     func save() {
         //TODO: настроить алерт сообщение о важности внесения имени
-        handler?(OrderItem(link: nil, deadline: nil, paid: nil, name: nameTextField.text ?? "", price: nil, numberOfSigns: nil, customer: customerTextField.text))
+        handler?(OrderItem(link: nil, deadline: nil, paid: nil, name: nameTextField.text ?? "", price: Double(priceTextField.text ?? "0"), numberOfSigns: nil, customer: nil))
 //        switchView.isSelected
 //        pickView.selectedRow(inComponent: 0)
         self.dismiss(animated: true)

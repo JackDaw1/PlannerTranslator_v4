@@ -15,9 +15,10 @@ class OrderDetailInteractor: OrderDetailInteractorInputProtocol {
     
     func editOrder(link: String?, deadline: Date?, made: Bool?, paid: Bool?, name: String, price: Double?, numberOfSigns: Int64?, customer: String?, time: Int64?) {
         guard let orderItem = orderItem else { return }
-        orderItem.name = name
+        var newOrder = orderItem
+        newOrder.name = name
         //orderItem.content = content
-        presenter?.didEditOrder(orderItem)
+        presenter?.didEditOrder(newOrder)
     }
     
 }
