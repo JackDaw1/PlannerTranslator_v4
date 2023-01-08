@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "FDDC9DE2-7871-4456-8EB8-3A275946B9DC"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D30F5D33-39AE-4236-AE6B-E6A2EE461416"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlannerTranslator_v4Network/Moya/OrdersModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "getDetailOfTask(id:completionHandler:errorHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "71067A0A-D57E-4957-8484-9F096DA0B9AF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlannerTranslator_v4Network/Moya/OrdersModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "getDetailOfTask(id:completionHandler:errorHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FA39CA96-CF67-424A-AAB3-A6B6176907F2"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlannerTranslator_v4/OrderListModule/Interactor/OrderListInteractor.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "saveOrder(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "FA39CA96-CF67-424A-AAB3-A6B6176907F2 - e8580b4af48c7e39"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;PlannerTranslator_v4.OrderItem&gt;) -&gt; () in PlannerTranslator_v4.OrderListInteractor.saveOrder(PlannerTranslator_v4.OrderItem) -&gt; ()"
+                  moduleName = "PlannerTranslator_v4"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/galina/ios-development/Xcode/PlannerTranslator_v4/PlannerTranslator_v4/OrderListModule/Interactor/OrderListInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "FA39CA96-CF67-424A-AAB3-A6B6176907F2 - e8580b4af48c7e39"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;PlannerTranslator_v4.OrderItem&gt;) -&gt; () in PlannerTranslator_v4.OrderListInteractor.saveOrder(PlannerTranslator_v4.OrderItem) -&gt; ()"
+                  moduleName = "PlannerTranslator_v4"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/galina/ios-development/Xcode/PlannerTranslator_v4/PlannerTranslator_v4/OrderListModule/Interactor/OrderListInteractor.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "76">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4200731A-66A5-4E39-B3A1-1A2355540B97"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlannerTranslator_v4Network/Moya/MoyaRequestType.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "task"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7EF15E68-F16F-4535-A0C2-985763287A8E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlannerTranslator_v4Network/Moya/MoyaRequestType.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "task"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
