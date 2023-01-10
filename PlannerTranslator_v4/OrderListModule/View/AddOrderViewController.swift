@@ -6,9 +6,8 @@ class AddOrderViewController: UIViewController, UIPickerViewDelegate {
     var nameTextField: UITextField = UITextField()
     var priceTextField: UITextField = UITextField()
     var saveButton: UIButton = UIButton()
-    var switchView: UISwitch = UISwitch()
-    var pickView: UIPickerView = UIPickerView()
-    
+    var pickView: UIDatePicker = UIDatePicker()
+    private var selectedDate: String? = nil
     var handler: ((OrderItem) -> Void)?
     
     private func baseConfigure() {
@@ -24,13 +23,31 @@ class AddOrderViewController: UIViewController, UIPickerViewDelegate {
         saveButton.setTitle("Save", for: UIControl.State.selected)
         saveButton.addTarget(self, action: #selector(save), for: UIControl.Event.touchUpInside)
         
-        pickView.delegate = self
+        pickView.datePickerMode = .date
+        pickView.addTarget(self, action: #selector(datePickerValueChanged), for: UIControl.Event.valueChanged)
     }
+    
+    @objc
+    func datePickerValueChanged(_ sender: UIDatePicker){
+            
+            // Create date formatter
+            let dateFormatter: DateFormatter = DateFormatter()
+            
+            // Set date format
+            dateFormatter.dateFormat = "yyyy-MM-dd"
+            
+            // Apply date format
+            selectedDate = dateFormatter.string(from: sender.date)
+            
+            print("Selected value \(selectedDate)")
+        
+        }
     
     func setupConstraints() {
         [
             nameTextField,
             priceTextField,
+            pickView,
             saveButton
         ].forEach { customView in
             view.addSubview(customView)
@@ -48,7 +65,12 @@ class AddOrderViewController: UIViewController, UIPickerViewDelegate {
             priceTextField.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
             priceTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor),
             priceTextField.heightAnchor.constraint(equalToConstant: 60),
-            priceTextField.bottomAnchor.constraint(equalTo: saveButton.topAnchor),
+            
+            pickView.topAnchor.constraint(equalTo: priceTextField.bottomAnchor),
+            pickView.leadingAnchor.constraint(equalTo: priceTextField.leadingAnchor),
+            pickView.trailingAnchor.constraint(equalTo: priceTextField.trailingAnchor),
+            pickView.heightAnchor.constraint(equalToConstant: 200),
+            pickView.bottomAnchor.constraint(equalTo: saveButton.bottomAnchor),
             
             saveButton.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor),
             saveButton.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
@@ -65,7 +87,7 @@ class AddOrderViewController: UIViewController, UIPickerViewDelegate {
     @objc
     func save() {
         //TODO: настроить алерт сообщение о важности внесения имени
-        handler?(OrderItem(link: nil, deadline: nil, paid: nil, name: nameTextField.text ?? "", price: Double(priceTextField.text ?? "0"), numberOfSigns: nil, customer: nil))
+        handler?(OrderItem(link: nil, deadline: selectedDate, paid: nil, name: nameTextField.text ?? "", price: Double(priceTextField.text ?? "0"), numberOfSigns: nil, customer: nil))
 //        switchView.isSelected
 //        pickView.selectedRow(inComponent: 0)
         self.dismiss(animated: true)

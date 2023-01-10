@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		4520160D4DC43576232DAD16 /* Pods_PlannerTranslator_v4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6629D42F64542F2D72C8C0BD /* Pods_PlannerTranslator_v4.framework */; };
 		BFCE71E05C921B3D9C024417 /* Pods_PlannerTranslator_v4_PlannerTranslator_v4Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8616E859F36D8A2F2DF0FF5 /* Pods_PlannerTranslator_v4_PlannerTranslator_v4Tests.framework */; };
+		FE420001296D21D10008F502 /* ProfileMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE420000296D21D10008F502 /* ProfileMocks.swift */; };
+		FE420003296D23590008F502 /* ProfileDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE955340296968D1001CE332 /* ProfileDetailProtocols.swift */; };
+		FE420005296D25D30008F502 /* NetworkEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE420004296D25D30008F502 /* NetworkEntities.swift */; };
+		FE420006296D25D50008F502 /* NetworkEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE420004296D25D30008F502 /* NetworkEntities.swift */; };
+		FE420007296D25D60008F502 /* NetworkEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE420004296D25D30008F502 /* NetworkEntities.swift */; };
+		FE420008296D26110008F502 /* OrderDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9552F829668E1A001CE332 /* OrderDetailProtocols.swift */; };
 		FE4DE144296AAF350055FCE1 /* MoyaRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE13F296AAF350055FCE1 /* MoyaRequestType.swift */; };
 		FE4DE147296AAF350055FCE1 /* MoyaNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE140296AAF350055FCE1 /* MoyaNetworkManager.swift */; };
 		FE4DE14A296AAF350055FCE1 /* OrdersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE141296AAF350055FCE1 /* OrdersModel.swift */; };
@@ -86,7 +92,6 @@
 		FE9553612969CD1B001CE332 /* IncomeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9553602969CD1B001CE332 /* IncomeListPresenter.swift */; };
 		FE9553632969CD3F001CE332 /* IncomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9553622969CD3F001CE332 /* IncomeTableViewCell.swift */; };
 		FE9553652969CD4F001CE332 /* IncomeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9553642969CD4F001CE332 /* IncomeListViewController.swift */; };
-		FE9553672969CD70001CE332 /* AddIncomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9553662969CD70001CE332 /* AddIncomeViewController.swift */; };
 		FE9553692969CD98001CE332 /* IncomeListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9553682969CD98001CE332 /* IncomeListProtocols.swift */; };
 		FE95536B2969CDB9001CE332 /* IncomeListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95536A2969CDB9001CE332 /* IncomeListRouter.swift */; };
 		FE95536D2969CDCB001CE332 /* IncomeListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95536C2969CDCA001CE332 /* IncomeListInteractor.swift */; };
@@ -118,6 +123,8 @@
 		8DC455B40D0287781A11831E /* Pods-PlannerTranslator_v4Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlannerTranslator_v4Tests.debug.xcconfig"; path = "Target Support Files/Pods-PlannerTranslator_v4Tests/Pods-PlannerTranslator_v4Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A8616E859F36D8A2F2DF0FF5 /* Pods_PlannerTranslator_v4_PlannerTranslator_v4Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlannerTranslator_v4_PlannerTranslator_v4Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED573DE4116DFA2D6C47142 /* Pods-PlannerTranslator_v4-PlannerTranslator_v4Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlannerTranslator_v4-PlannerTranslator_v4Tests.debug.xcconfig"; path = "Target Support Files/Pods-PlannerTranslator_v4-PlannerTranslator_v4Tests/Pods-PlannerTranslator_v4-PlannerTranslator_v4Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		FE420000296D21D10008F502 /* ProfileMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMocks.swift; sourceTree = "<group>"; };
+		FE420004296D25D30008F502 /* NetworkEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEntities.swift; sourceTree = "<group>"; };
 		FE4DE13F296AAF350055FCE1 /* MoyaRequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaRequestType.swift; sourceTree = "<group>"; };
 		FE4DE140296AAF350055FCE1 /* MoyaNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaNetworkManager.swift; sourceTree = "<group>"; };
 		FE4DE141296AAF350055FCE1 /* OrdersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersModel.swift; sourceTree = "<group>"; };
@@ -185,7 +192,6 @@
 		FE9553602969CD1B001CE332 /* IncomeListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeListPresenter.swift; sourceTree = "<group>"; };
 		FE9553622969CD3F001CE332 /* IncomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTableViewCell.swift; sourceTree = "<group>"; };
 		FE9553642969CD4F001CE332 /* IncomeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeListViewController.swift; sourceTree = "<group>"; };
-		FE9553662969CD70001CE332 /* AddIncomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddIncomeViewController.swift; sourceTree = "<group>"; };
 		FE9553682969CD98001CE332 /* IncomeListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeListProtocols.swift; sourceTree = "<group>"; };
 		FE95536A2969CDB9001CE332 /* IncomeListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeListRouter.swift; sourceTree = "<group>"; };
 		FE95536C2969CDCA001CE332 /* IncomeListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeListInteractor.swift; sourceTree = "<group>"; };
@@ -238,6 +244,14 @@
 				A8616E859F36D8A2F2DF0FF5 /* Pods_PlannerTranslator_v4_PlannerTranslator_v4Tests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FE42FFFF296D21B80008F502 /* ProfileMock */ = {
+			isa = PBXGroup;
+			children = (
+				FE420000296D21D10008F502 /* ProfileMocks.swift */,
+			);
+			path = ProfileMock;
 			sourceTree = "<group>";
 		};
 		FE4DE13D296AAEBE0055FCE1 /* PlannerTranslator_v4Network */ = {
@@ -328,6 +342,7 @@
 		FE91B1CE296564910063ED03 /* PlannerTranslator_v4Tests */ = {
 			isa = PBXGroup;
 			children = (
+				FE42FFFF296D21B80008F502 /* ProfileMock */,
 				FE4DE173296BC9FA0055FCE1 /* OrderListMock */,
 				FE91B1CF296564910063ED03 /* PlannerTranslator_v4Tests.swift */,
 			);
@@ -352,6 +367,7 @@
 				FE955310296738FB001CE332 /* CustomerAPI.swift */,
 				FE95534229696C93001CE332 /* ProfileItem.swift */,
 				FE95534429696CA1001CE332 /* ProfileAPI.swift */,
+				FE420004296D25D30008F502 /* NetworkEntities.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -705,7 +721,6 @@
 			children = (
 				FE9553622969CD3F001CE332 /* IncomeTableViewCell.swift */,
 				FE9553642969CD4F001CE332 /* IncomeListViewController.swift */,
-				FE9553662969CD70001CE332 /* AddIncomeViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -948,7 +963,6 @@
 				FE9553152967416D001CE332 /* CustomerDetailProtocols.swift in Sources */,
 				FE9553532969C98B001CE332 /* IncomeDetailProtocols.swift in Sources */,
 				FE95533F2969687D001CE332 /* ProfileDetailViewController.swift in Sources */,
-				FE9553672969CD70001CE332 /* AddIncomeViewController.swift in Sources */,
 				FE95530729668E1A001CE332 /* OrderDetailRouter.swift in Sources */,
 				FE4DE176296BCA1A0055FCE1 /* OrderListMocks.swift in Sources */,
 				FE95530629668E1A001CE332 /* OrderDetailInteractor.swift in Sources */,
@@ -993,6 +1007,7 @@
 				FE95530529668E1A001CE332 /* OrderDetailProtocols.swift in Sources */,
 				FE9553692969CD98001CE332 /* IncomeListProtocols.swift in Sources */,
 				FE955341296968D1001CE332 /* ProfileDetailProtocols.swift in Sources */,
+				FE420005296D25D30008F502 /* NetworkEntities.swift in Sources */,
 				FE95536D2969CDCB001CE332 /* IncomeListInteractor.swift in Sources */,
 				FE95533929696688001CE332 /* ProfileDetailPresenter.swift in Sources */,
 				FE9553212967492E001CE332 /* CustomerListProtocols.swift in Sources */,
@@ -1011,11 +1026,15 @@
 			files = (
 				FE4DE16B296BC1BA0055FCE1 /* CustomerItem.swift in Sources */,
 				FE4DE16A296BC1B70055FCE1 /* OrderAPI.swift in Sources */,
+				FE420001296D21D10008F502 /* ProfileMocks.swift in Sources */,
 				FE4DE16C296BC1BC0055FCE1 /* CustomerAPI.swift in Sources */,
 				FE4DE169296BC1B40055FCE1 /* OrderItem.swift in Sources */,
+				FE420006296D25D50008F502 /* NetworkEntities.swift in Sources */,
 				FE91B1D0296564910063ED03 /* PlannerTranslator_v4Tests.swift in Sources */,
 				FE4DE168296BC19C0055FCE1 /* PlannerTranslator_v4.xcdatamodeld in Sources */,
 				FE4DE166296BC1760055FCE1 /* PTDataBaseService.swift in Sources */,
+				FE420008296D26110008F502 /* OrderDetailProtocols.swift in Sources */,
+				FE420003296D23590008F502 /* ProfileDetailProtocols.swift in Sources */,
 				FE4DE175296BCA170055FCE1 /* OrderListMocks.swift in Sources */,
 				FE4DE177296BCCA90055FCE1 /* OrderListProtocols.swift in Sources */,
 				FE4DE16D296BC1BF0055FCE1 /* ProfileItem.swift in Sources */,
@@ -1033,6 +1052,7 @@
 				FE4DE170296BC6200055FCE1 /* PlannerTranslator_v4.xcdatamodeld in Sources */,
 				FE4DE16F296BC5F90055FCE1 /* OrderItem.swift in Sources */,
 				FE91B1DC296564910063ED03 /* PlannerTranslator_v4UITestsLaunchTests.swift in Sources */,
+				FE420007296D25D60008F502 /* NetworkEntities.swift in Sources */,
 				FE4DE167296BC1760055FCE1 /* PTDataBaseService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

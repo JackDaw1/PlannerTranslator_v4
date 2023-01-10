@@ -37,7 +37,7 @@ class MainTabBarController: UITabBarController {
                 image: UIImage(named: "customer.png")!
             ),
             createNavController(
-                for: OrderListRouter.createOrderListModule(),
+                for: IncomeListRouter.createIncomeListModule(),
                 title: "Смета",
                 image: UIImage(named: "money.png")!
             ),

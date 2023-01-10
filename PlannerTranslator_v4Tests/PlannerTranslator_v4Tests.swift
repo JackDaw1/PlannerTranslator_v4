@@ -46,6 +46,31 @@ final class PlannerTranslator_v4Tests: XCTestCase {
         XCTAssertTrue(presenter.orders.isEmpty, "Orders are loaded")
     }
     
+    func testProfile() throws {
+        let presenter = ProfileDetailPresenterMock()
+        let view = ProfileDetailViewMock()
+        view.presenter = presenter
+        let router = ProfileDetailRouterMock()
+        let interactor = ProfileDetailInteractorMock()
+        interactor.presenter = presenter
+        
+        presenter.view = view
+        presenter.interactor = interactor
+        presenter.router = router
+        
+        XCTAssertTrue(presenter.profileItem == nil, "Profile not inited")
+        
+        interactor.retrieveOrders()
+        XCTAssertTrue(presenter.profileItem != nil, "Profile is loaded")
+        
+        presenter.editProfile(
+            name: "TEST",
+            contact1: "TestContact1",
+            contact2: "TestContact2"
+        )
+        XCTAssertTrue(presenter.profileItem?.name == "TEST", "Profile changed")
+    }
+    
 //    func testDBInited() throws {
 //        // This is an example of a functional test case.
 //        // Use XCTAssert and related functions to verify your tests produce the correct results.

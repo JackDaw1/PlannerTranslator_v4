@@ -12,7 +12,7 @@ struct SectionOrdersItem {
     var date: Date
 }
 
-struct OrderItem: Codable, ATProtocol {
+struct OrderItem: ATProtocol {
     var idAT: String?
     var link: String?
     var deadline: String?
@@ -24,9 +24,9 @@ struct OrderItem: Codable, ATProtocol {
     var customer: String?
     var time: Int64? //!!
     
-    enum OrderKeys: CodingKey {
-        case link, deadline, made, paid, name, price
-    }
+//    enum OrderKeys: CodingKey {
+//        case link, deadline, made, paid, name, price, customer
+//    }
     
     init(
         idAT: String? = nil,
@@ -57,10 +57,11 @@ struct OrderItem: Codable, ATProtocol {
         self.made = try container.decodeIfPresent(Bool.self, forKey: .made) ?? false
         self.paid = try container.decodeIfPresent(Bool.self, forKey: .paid) ?? false
         self.name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
+        self.customer = try container.decodeIfPresent(String.self, forKey: .customer) ?? ""
         self.price = try container.decodeIfPresent(Double.self, forKey: .price)
     }
     
-    enum CodingKeys: CodingKey {
+    enum OrderKeys: CodingKey {
         case idAT
         case link
         case deadline
@@ -74,7 +75,7 @@ struct OrderItem: Codable, ATProtocol {
     }
     
     func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
+        var container = encoder.container(keyedBy: OrderKeys.self)
         try container.encodeIfPresent(self.link, forKey: .link)
         try container.encodeIfPresent(self.deadline, forKey: .deadline)
         try container.encode(self.made, forKey: .made)

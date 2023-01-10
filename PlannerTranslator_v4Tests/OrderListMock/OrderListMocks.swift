@@ -5,7 +5,6 @@
 //  Created by Galina Iaroshenko on 09.01.2023.
 //
 
-import Foundation
 import UIKit
 
 final class OrderListPresenterMock: OrderListPresenterProtocol {

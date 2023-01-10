@@ -96,7 +96,7 @@ class ProfileDetailViewController: UIViewController {
         
         presenter?.viewDidLoad()
 
-        shareButton.setTitle("На следующий экран", for: .normal)
+        shareButton.setTitle("Поделиться", for: .normal)
         view.addSubview(shareButton)
         shareButton.addTarget(self, action: #selector(didTapShareButton), for: .touchUpInside)
         shareButton.setTitleColor(.black, for: .normal)

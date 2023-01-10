@@ -21,7 +21,7 @@ class OrderAPI {
         "2023-01-06", made: false, paid: true, name: "SwiftUI updates 06 2 part", price: 1000, numberOfSigns: 10038, customer: "proglib", time: 138),
         OrderItem(link: "https://proglib.io/", deadline: "2023-01-07", made: false, paid: true, name: "SwiftUI news 07 1 part", price: 1000, numberOfSigns: 10038, customer: "swiftbook", time: 138),
         OrderItem(link: "https://proglib.io/", deadline: "2023-01-07", made: false, paid: true, name: "SwiftUI news 07 2 part", price: 1000, numberOfSigns: 10038, customer: "swiftbook", time: 138),
-        OrderItem(link: "https://proglib.io/", deadline: "2023-01-08", made: false, paid: true, name: "SwiftUI features", price: 1000, numberOfSigns: 10038, customer: "swiftbook", time: 138),
+        OrderItem(link: "https://proglib.io/", deadline: "2023-01-08", made: true, paid: true, name: "SwiftUI features", price: 1000, numberOfSigns: 10038, customer: "swiftbook", time: 138),
         
     ]
     
