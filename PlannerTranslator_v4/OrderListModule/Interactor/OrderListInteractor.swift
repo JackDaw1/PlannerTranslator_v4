@@ -1,6 +1,6 @@
 
 import Foundation
-
+import CoreData
 class OrderListInteractor: OrderListInteractorInputProtocol {
     
     weak var presenter: OrderListInteractorOutputProtocol?
@@ -8,25 +8,38 @@ class OrderListInteractor: OrderListInteractorInputProtocol {
     var orders: [OrderItem] {
         return orderStore.orders
     }
+    let context = PTDataBaseService.shared.persistentContainer.viewContext
     
     func retrieveOrders() {
         //TODO: Add load data from DB
         //coredata тут прописать загрузку
         //coreDatdBaseService.loadFrom....->[OrderItem] -> save to orderStore
         
+        let request = Order.fetchRequest()
+        let contextObject = self.context
+        let ordersDB = try? contextObject.fetch(request)
+        
         OrdersModel.loadTasks(completionHandler: { [weak self] orderList in
-            self?.presenter?.didRetrieveOrders(orderList)
-        }, errorHandler: { error in
+            guard let self = self else { return }
             
+            self.presenter?.didRetrieveOrders(orderList)
+            //костыль
+            if let ordersDB = ordersDB, ordersDB.isEmpty, !orderList.isEmpty {
+                PTDataBaseService.shared.reloadOrders(by: orderList)
+            }
+        }, errorHandler: { [weak self] error in
+            guard let self = self, let ordersDB = ordersDB else { return }
+            DispatchQueue.main.async {
+                self.presenter?.didRetrieveOrders(ordersDB.compactMap({ OrderItem.init(order: $0) }))
+            }
         })
-//        presenter?.didRetrieveOrders(orders)
     }
     
     func saveOrder(_ order: OrderItem) {
         //TODO: Add saveing to DB
         //coredata тут прописать сохранение
         //coreDatdBaseService.save....
-//        orderStore.addOrder(order) //а это потом удаляем
+        //        orderStore.addOrder(order) //а это потом удаляем
         OrdersModel.create(order) { [weak self] responseOrder in
             if let order = responseOrder {
                 self?.presenter?.didAddOrder(order)

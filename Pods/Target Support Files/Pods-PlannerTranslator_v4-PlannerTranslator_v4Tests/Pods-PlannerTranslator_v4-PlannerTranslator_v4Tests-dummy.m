@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_PlannerTranslator_v4_PlannerTranslator_v4Tests : NSObject
+@end
+@implementation PodsDummy_Pods_PlannerTranslator_v4_PlannerTranslator_v4Tests
+@end

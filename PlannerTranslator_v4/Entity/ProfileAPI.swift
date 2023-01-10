@@ -6,5 +6,5 @@ class ProfileAPI {
     public static let shared = ProfileAPI()
     
     public private(set) var profile: ProfileItem =
-        ProfileItem(name: "Ярошенко Галина Александровна", contact1: "@telegram_contact_Miroslav", contact2: "miroslav_email@gmail.com")
+        ProfileItem(name: "Ярошенко Галина Александровна", contact1: "@gaalya", contact2: "iaroshenko.ga@gmail.com")
 }

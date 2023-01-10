@@ -7,6 +7,11 @@
 
 import Foundation
 
+struct SectionOrdersItem {
+    var orders: [OrderItem] = []
+    var date: Date
+}
+
 struct OrderItem: Codable {
     var link: String?
     var deadline: String?
@@ -49,5 +54,14 @@ struct OrderItem: Codable {
         self.paid = try container.decodeIfPresent(Bool.self, forKey: .paid) ?? false
         self.name = try container.decodeIfPresent(String.self, forKey: .name) ?? ""
         self.price = try container.decodeIfPresent(Double.self, forKey: .price)
+    }
+    
+    public init(order: Order) {
+        self.link = order.link
+        self.deadline = order.deadline?.toString()
+        self.made = order.made
+        self.paid = order.paid
+        self.name = order.name ?? ""
+        self.price = order.price
     }
 }

@@ -1,11 +1,6 @@
 
 import UIKit
 
-struct SectionOrdersItem {
-    var orders: [OrderItem] = []
-    var date: Date
-}
-
 class OrderListViewController: UITableViewController {
     
     var presenter: OrderListPresenterProtocol?

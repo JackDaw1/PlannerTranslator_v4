@@ -6,6 +6,8 @@
 //
 
 import XCTest
+//import CoreData
+
 @testable import PlannerTranslator_v4
 
 final class PlannerTranslator_v4Tests: XCTestCase {
@@ -18,13 +20,76 @@ final class PlannerTranslator_v4Tests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testOrderList() throws {
+        let presenter = OrderListPresenterMock()
+        let view = OrderListViewMock()
+        view.presenter = presenter
+        let router = OrderListRouterMock()
+        let interactor = OrderListInteractorMock()
+        interactor.presenter = presenter
+        
+        presenter.view = view
+        presenter.interactor = interactor
+        presenter.router = router
+        
+        XCTAssertTrue(presenter.orders.isEmpty, "No orders")
+        
+        let newElement = OrderItem(link: "https://proglib.io/", deadline: "2023-01-08", made: false, paid: true, name: "SwiftUI features", price: 1000, numberOfSigns: 10038, customer: "swiftbook", time: 138)
+        presenter.addOrder(newElement)
+        
+        XCTAssertFalse(presenter.orders.isEmpty, "Order is added")
+        
+        presenter.removeOrder(newElement)
+        XCTAssertTrue(presenter.orders.isEmpty, "Order is removed")
+        
+        interactor.retrieveOrders()
+        XCTAssertTrue(presenter.orders.isEmpty, "Orders are loaded")
     }
+    
+//    func testDBInited() throws {
+//        // This is an example of a functional test case.
+//        // Use XCTAssert and related functions to verify your tests produce the correct results.
+//        // Any test you write for XCTest can be annotated as throws and async.
+//        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
+//        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+//        let context = PTDataBaseService.shared.persistentContainer.viewContext
+//        let request = Order.fetchRequest()
+//        let ordersDB0 = try? context.fetch(request)
+//
+//        XCTAssertTrue(ordersDB0 != nil, "DB inited")
+//    }
+    
+//    func testDBCommon() throws {
+//        let context = PTDataBaseService.shared.persistentContainer.viewContext
+//        let request = Order.fetchRequest()
+//        let ordersDB0 = try? context.fetch(request)
+//
+//        XCTAssertTrue(ordersDB0 != nil, "DB inited")
+//
+//        let oldCount = ordersDB0?.count ?? 0
+//
+//        let newElement = OrderItem(link: "https://proglib.io/", deadline: "2023-01-08", made: false, paid: true, name: "SwiftUI features", price: 1000, numberOfSigns: 10038, customer: "swiftbook", time: 138)
+//
+//        let newOrder = Order(context: context)
+//        newOrder.name = newElement.name
+//        newOrder.link = newElement.link
+//        newOrder.deadline = newElement.deadline?.toDate()
+//        newOrder.made = newElement.made
+//        newOrder.price = newElement.price ?? 0.0
+//        newOrder.customer = nil
+//        newOrder.paid = newElement.paid ?? false
+//        newOrder.numberOfSigns = newElement.numberOfSigns ?? 0
+//        newOrder.time = newElement.time ?? 0
+//
+//            do {
+//                try context.save()
+//            } catch {
+//                context.rollback()
+//            }
+//        let newCount = ordersDB0?.count ?? 0
+//
+//        XCTAssertTrue(newCount > oldCount, "DB is edited")//
+//    }
 
     func testPerformanceExample() throws {
         // This is an example of a performance test case.

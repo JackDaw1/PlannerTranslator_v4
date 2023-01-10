@@ -39,54 +39,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FA39CA96-CF67-424A-AAB3-A6B6176907F2"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PlannerTranslator_v4/OrderListModule/Interactor/OrderListInteractor.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "saveOrder(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "FA39CA96-CF67-424A-AAB3-A6B6176907F2 - e8580b4af48c7e39"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;PlannerTranslator_v4.OrderItem&gt;) -&gt; () in PlannerTranslator_v4.OrderListInteractor.saveOrder(PlannerTranslator_v4.OrderItem) -&gt; ()"
-                  moduleName = "PlannerTranslator_v4"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/galina/ios-development/Xcode/PlannerTranslator_v4/PlannerTranslator_v4/OrderListModule/Interactor/OrderListInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "FA39CA96-CF67-424A-AAB3-A6B6176907F2 - e8580b4af48c7e39"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;PlannerTranslator_v4.OrderItem&gt;) -&gt; () in PlannerTranslator_v4.OrderListInteractor.saveOrder(PlannerTranslator_v4.OrderItem) -&gt; ()"
-                  moduleName = "PlannerTranslator_v4"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/galina/ios-development/Xcode/PlannerTranslator_v4/PlannerTranslator_v4/OrderListModule/Interactor/OrderListInteractor.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "31"
-                  endingLineNumber = "31"
-                  offsetFromSymbolStart = "76">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4200731A-66A5-4E39-B3A1-1A2355540B97"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"

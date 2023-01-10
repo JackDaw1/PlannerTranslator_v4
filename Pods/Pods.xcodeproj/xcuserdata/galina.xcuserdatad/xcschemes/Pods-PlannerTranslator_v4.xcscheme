@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F169095D9739E448C94C468CF2EFC77E"
-               BuildableName = "libPods-PlannerTranslator_v4.a"
+               BuildableName = "Pods_PlannerTranslator_v4.framework"
                BlueprintName = "Pods-PlannerTranslator_v4"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
