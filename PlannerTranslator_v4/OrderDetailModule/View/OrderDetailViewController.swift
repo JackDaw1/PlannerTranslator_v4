@@ -87,6 +87,10 @@ class OrderDetailViewController: UIViewController {
         madeButton.addTarget(self, action: #selector(didTapMadeButton), for: .touchUpInside)
         madeButton.setTitleColor(.black, for: .normal)
         madeButton.backgroundColor = UIColor.lightGray
+        
+        titleLabel.numberOfLines = 0
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 20.0)
+
     }
     
     @objc private func didTapMadeButton() {
@@ -121,18 +125,18 @@ extension OrderDetailViewController: OrderDetailViewProtocol {
     func showOrder(_ order: OrderItem) {
         
         titleLabel.text = order.name
-        customerLabel.text = order.customer
-//        if order.customer != nil {
-//            customerLabel.text = (order.customer)!
-//        }
+        customerLabel.text = "Заказчик: " + (order.customer ?? "")
+
         if order.price != nil {
-            priceLabel.text = String(order.price!)
+            priceLabel.text = "Стоимость: " + String(order.price!)
         }
         //подправить с экстеншионом тустринг
-        deadlineLabel.text = "date"
-        if order.time != nil {
-            timeLabel.text = String(order.time!)
-        }
+        deadlineLabel.text = "Дата сдачи: " + (order.deadline ?? "")
+        
+
+//        if order.time != nil {
+//            timeLabel.text = "timeLabel:" + String(order.time!)
+//        }
 //        if order.price != nil {
 //            priceLabel.text = String(order.price!)
 //        }
