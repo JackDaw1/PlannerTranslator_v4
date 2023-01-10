@@ -13,12 +13,19 @@ class OrderDetailInteractor: OrderDetailInteractorInputProtocol {
         presenter?.didDeleteOrder()
     }
     
-    func editOrder(link: String?, deadline: Date?, made: Bool?, paid: Bool?, name: String, price: Double?, numberOfSigns: Int64?, customer: String?, time: Int64?) {
+    func editOrder(link: String?, deadline: Date?, made: Bool?, paid: Bool?, name: String?, price: Double?, numberOfSigns: Int64?, customer: String?, time: Int64?) {
         guard let orderItem = orderItem else { return }
         var newOrder = orderItem
-        newOrder.name = name
-        //orderItem.content = content
-        presenter?.didEditOrder(newOrder)
+        if let name = name {
+            newOrder.name = name
+        }
+        if let made = made {
+            newOrder.made = made
+        }
+        OrdersModel.edit(newOrder) { [weak self] item in
+            self?.presenter?.didEditOrder(newOrder)
+        } errorHandler: { error in
+        }
     }
     
 }

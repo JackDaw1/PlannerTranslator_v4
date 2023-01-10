@@ -47,5 +47,8 @@ protocol OrderListRouterProtocol: AnyObject {
     static func createOrderListModule() -> UIViewController
     
     // PRESENTER -> ROUTER
-    func presentOrderDetailScreen(from view: OrderListViewProtocol, for order: OrderItem)
+    func presentOrderDetailScreen(
+    from view: OrderListViewProtocol,
+    outputPreneter: OrderDetailPresenterOutputProtocol,
+    for order: OrderItem)
 }

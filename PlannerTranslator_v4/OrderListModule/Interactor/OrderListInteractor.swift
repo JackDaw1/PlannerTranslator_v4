@@ -50,8 +50,6 @@ class OrderListInteractor: OrderListInteractorInputProtocol {
     }
     
     func deleteOrder(_ order: OrderItem) {
-        orderStore.removeOrder(order)
         presenter?.didRemoveOrder(order)
     }
-    
 }

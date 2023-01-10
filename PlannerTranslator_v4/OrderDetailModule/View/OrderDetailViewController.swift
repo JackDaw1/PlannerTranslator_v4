@@ -14,6 +14,8 @@ class OrderDetailViewController: UIViewController {
     var deleteButton: UIButton = UIButton()
     var editButton: UIButton = UIButton()
     
+    let madeButton = UIButton()
+    
     var presenter: OrderDetailPresenterProtocol?
     
     private func baseConfigure() {
@@ -29,7 +31,8 @@ class OrderDetailViewController: UIViewController {
             customerLabel,
             numberOfSignsLabel,
             maidLabel,
-            paidLabel
+            paidLabel,
+            madeButton
             
         ].forEach { customView in
             view.addSubview(customView)
@@ -62,6 +65,12 @@ class OrderDetailViewController: UIViewController {
             timeLabel.trailingAnchor.constraint(equalTo: deadlineLabel.trailingAnchor),
             timeLabel.topAnchor.constraint(equalTo: deadlineLabel.bottomAnchor),
             timeLabel.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor),
+            
+            madeButton.leadingAnchor.constraint(equalTo: timeLabel.leadingAnchor),
+            madeButton.trailingAnchor.constraint(equalTo: timeLabel.trailingAnchor),
+            madeButton.topAnchor.constraint(equalTo: timeLabel.bottomAnchor),
+            madeButton.heightAnchor.constraint(equalToConstant: 60),
+            madeButton.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor),
      
         ])
     }
@@ -72,6 +81,16 @@ class OrderDetailViewController: UIViewController {
         baseConfigure()
         
         presenter?.viewDidLoad()
+        
+        madeButton.setTitle("Заказ сделан", for: .normal)
+        view.addSubview(madeButton)
+        madeButton.addTarget(self, action: #selector(didTapMadeButton), for: .touchUpInside)
+        madeButton.setTitleColor(.black, for: .normal)
+        madeButton.backgroundColor = UIColor.lightGray
+    }
+    
+    @objc private func didTapMadeButton() {
+        presenter?.editOrder(link: nil, deadline: nil, made: true, paid: nil, name: nil, price: nil, numberOfSigns: nil, customer: nil, time: nil)
     }
     
 //    func deleteTapped(_ sender: Any) {

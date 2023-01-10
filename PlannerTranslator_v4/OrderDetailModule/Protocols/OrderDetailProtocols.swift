@@ -17,7 +17,7 @@ protocol OrderDetailPresenterProtocol: class {
     
     // VIEW -> PRESENTER
     func viewDidLoad()
-    func editOrder(link: String?, deadline: Date?, made: Bool?, paid: Bool?, name: String, price: Double?, numberOfSigns: Int64?, customer:String?, time: Int64?)
+    func editOrder(link: String?, deadline: Date?, made: Bool?, paid: Bool?, name: String?, price: Double?, numberOfSigns: Int64?, customer:String?, time: Int64?)
     func deleteOrder()
 }
 
@@ -28,7 +28,7 @@ protocol OrderDetailInteractorInputProtocol: class {
     
     // PRESENTER -> INTERACTOR
     func deleteOrder()
-    func editOrder(link: String?, deadline: Date?, made: Bool?, paid: Bool?, name: String, price: Double?, numberOfSigns: Int64?, customer:String?, time: Int64?)
+    func editOrder(link: String?, deadline: Date?, made: Bool?, paid: Bool?, name: String?, price: Double?, numberOfSigns: Int64?, customer:String?, time: Int64?)
 }
 
 protocol OrderDetailInteractorOutputProtocol: class {
@@ -38,9 +38,17 @@ protocol OrderDetailInteractorOutputProtocol: class {
     func didEditOrder(_ order: OrderItem) 
 }
 
+protocol OrderDetailPresenterOutputProtocol: class {
+
+    // INTERACTOR -> PRESENTER
+    func didDeleteOrder(_ order: OrderItem)
+    func didEditOrder(_ order: OrderItem)
+}
+
 protocol OrderDetailRouterProtocol: class {
     
-    static func createOrderDetailRouterModule(with order: OrderItem) -> UIViewController
+    static func createOrderDetailRouterModule(with order: OrderItem,
+                                              outputPresenter: OrderDetailPresenterOutputProtocol) -> UIViewController
     
     // PRESENTER -> ROUTER
     func navigateBackToListViewController(from view: OrderDetailViewProtocol)

@@ -14,6 +14,7 @@ enum RequestType {
     case orders
     case ordersDetail(String)
     case create(OrderItem)
+    case edit(OrderItem)
 }
 
 protocol WDTargetType: TargetType, Hashable {
@@ -44,6 +45,8 @@ extension RequestType: WDTargetType {
             return "PlannerTranslator"
         case .create:
             return "PlannerTranslator"
+        case .edit:
+            return "PlannerTranslator"
         }
     }
     
@@ -53,8 +56,8 @@ extension RequestType: WDTargetType {
             return Moya.Method.get
         case .create:
             return Moya.Method.post
-        default:
-            return Moya.Method.post
+        case .edit:
+            return Moya.Method.patch
         }
     }
     
@@ -72,14 +75,30 @@ extension RequestType: WDTargetType {
                 urlParameters: [:])
         case .create(let order):
             do {
-                let dict = try MoyRequest(records: [SubMoyRequest<OrderItem>.init(fields: order)]).jsonData()
+                let dict = try MoyRequest(records:
+                                            [
+                                                SubMoyRequest<OrderItem>.init(
+                                                    id: nil,
+                                                    fields: order)
+                                            ]).jsonData()
                 return .requestCompositeData(bodyData: dict,
                                              urlParameters: [:])
             } catch {
                 return Task.requestPlain
             }
-        default:
-            return Task.requestPlain
+        case .edit(let order):
+            do {
+                let dict = try MoyRequest(records:
+                                            [
+                                                SubMoyRequest<OrderItem>.init(
+                                                    id: order.idAT,
+                                                    fields: order)
+                                            ]).jsonData()
+                return .requestCompositeData(bodyData: dict,
+                                             urlParameters: [:])
+            } catch {
+                return Task.requestPlain
+            }
         }
     }
     

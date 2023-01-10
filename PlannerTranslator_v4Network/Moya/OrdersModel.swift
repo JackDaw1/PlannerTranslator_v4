@@ -7,7 +7,10 @@
 
 import Foundation
 
-struct MoyResponse<T: Codable>: Codable {
+protocol ATProtocol: Codable {
+    var idAT: String? { get set }
+}
+struct MoyResponse<T: ATProtocol>: Codable {
     let records: [SubMoyResponse<T>]
     
     enum MoyResponseKeys: CodingKey {
@@ -15,12 +18,20 @@ struct MoyResponse<T: Codable>: Codable {
     }
 }
 
-struct SubMoyResponse<T: Codable>: Codable {
+struct SubMoyResponse<T: ATProtocol>: Codable {
     let id: String
     let createdTime: String
-    let fields: T
+    var fields: T
     enum SubMoyResponseKeys: CodingKey {
         case id,createdTime,fields
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container: KeyedDecodingContainer<SubMoyResponse<T>.CodingKeys> = try decoder.container(keyedBy: SubMoyResponse<T>.CodingKeys.self)
+        self.id = try container.decode(String.self, forKey: SubMoyResponse<T>.CodingKeys.id)
+        self.createdTime = try container.decode(String.self, forKey: SubMoyResponse<T>.CodingKeys.createdTime)
+        self.fields = try container.decode(T.self, forKey: SubMoyResponse<T>.CodingKeys.fields)
+        self.fields.idAT = self.id
     }
 }
 
@@ -33,6 +44,7 @@ struct MoyRequest<T: Codable>: Codable {
 }
 
 struct SubMoyRequest<T: Codable>: Codable {
+    let id: String?
     let fields: T
     enum SubMoyRequestKeys: CodingKey {
         case id,createdTime,fields
@@ -92,6 +104,24 @@ class OrdersModel {
         errorHandler: @escaping ( WDNetworkError) -> Void) {
             
         MoyaNetworkManager.shared.mainRequest(RequestType.create(order)) { responseAPI in
+            parseData(responseAPI: responseAPI,
+                      type: MoyResponse<OrderItem>.self,
+                      completion: { response in
+                switch response {
+                case .success(let result):
+                    completionHandler(result.records.compactMap({ $0.fields }).first)
+                case .failure(let error):
+                    errorHandler(error)
+                }
+            })
+        }
+    }
+    
+    static func edit(_ order: OrderItem,
+        completionHandler: @escaping (OrderItem?) -> Void,
+        errorHandler: @escaping ( WDNetworkError) -> Void) {
+            
+        MoyaNetworkManager.shared.mainRequest(RequestType.edit(order)) { responseAPI in
             parseData(responseAPI: responseAPI,
                       type: MoyResponse<OrderItem>.self,
                       completion: { response in

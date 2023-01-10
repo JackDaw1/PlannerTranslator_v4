@@ -10,7 +10,8 @@ class OrderDetailRouter: OrderDetailRouterProtocol {
         viewVC.navigationController?.popViewController(animated: true)
     }
     
-    static func createOrderDetailRouterModule(with order: OrderItem) -> UIViewController {
+    static func createOrderDetailRouterModule(with order: OrderItem,
+                                              outputPresenter: OrderDetailPresenterOutputProtocol) -> UIViewController {
         
         let orderDetailVC = OrderDetailViewController()
         let presenter: OrderDetailPresenter & OrderDetailInteractorOutputProtocol = OrderDetailPresenter()
@@ -20,6 +21,7 @@ class OrderDetailRouter: OrderDetailRouterProtocol {
         interactor.orderItem = order
         interactor.presenter = presenter
         presenter.interactor = interactor
+        presenter.outputListPresenter = outputPresenter
         let router: OrderDetailRouterProtocol = OrderDetailRouter()
         presenter.router = router
         

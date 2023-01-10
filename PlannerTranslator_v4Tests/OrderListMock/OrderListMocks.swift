@@ -82,11 +82,12 @@ final class OrderListInteractorMock: OrderListInteractorInputProtocol {
 }
 
 final class OrderListRouterMock: OrderListRouterProtocol {
-    static func createOrderListModule() -> UIViewController {
-        return UIViewController()
+    func presentOrderDetailScreen(from view: OrderListViewProtocol, outputPreneter: OrderDetailPresenterOutputProtocol, for order: OrderItem) {
+        
     }
     
-    func presentOrderDetailScreen(from view: OrderListViewProtocol, for order: OrderItem) {
+    static func createOrderListModule() -> UIViewController {
+        return UIViewController()
     }
 }
 

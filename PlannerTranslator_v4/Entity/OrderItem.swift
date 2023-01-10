@@ -12,7 +12,8 @@ struct SectionOrdersItem {
     var date: Date
 }
 
-struct OrderItem: Codable {
+struct OrderItem: Codable, ATProtocol {
+    var idAT: String?
     var link: String?
     var deadline: String?
     var made: Bool = false
@@ -27,7 +28,9 @@ struct OrderItem: Codable {
         case link, deadline, made, paid, name, price
     }
     
-    init(link: String?,
+    init(
+        idAT: String? = nil,
+        link: String?,
         deadline: String?,
         made: Bool = false,
         paid: Bool?,
@@ -36,6 +39,7 @@ struct OrderItem: Codable {
         numberOfSigns: Int64?,
         customer:String?,
         time: Int64? = nil) {
+        self.idAT = idAT
         self.deadline = deadline
         self.made = made
         self.paid = paid
@@ -56,7 +60,34 @@ struct OrderItem: Codable {
         self.price = try container.decodeIfPresent(Double.self, forKey: .price)
     }
     
+    enum CodingKeys: CodingKey {
+        case idAT
+        case link
+        case deadline
+        case made
+        case paid
+        case name
+        case price
+        case numberOfSigns
+        case customer
+        case time
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encodeIfPresent(self.link, forKey: .link)
+        try container.encodeIfPresent(self.deadline, forKey: .deadline)
+        try container.encode(self.made, forKey: .made)
+        try container.encodeIfPresent(self.paid, forKey: .paid)
+        try container.encode(self.name, forKey: .name)
+        try container.encodeIfPresent(self.price, forKey: .price)
+        try container.encodeIfPresent(self.numberOfSigns, forKey: .numberOfSigns)
+        try container.encodeIfPresent(self.customer, forKey: .customer)
+        try container.encodeIfPresent(self.time, forKey: .time)
+    }
+    
     public init(order: Order) {
+//        self.idAT = order.idAT
         self.link = order.link
         self.deadline = order.deadline?.toString()
         self.made = order.made

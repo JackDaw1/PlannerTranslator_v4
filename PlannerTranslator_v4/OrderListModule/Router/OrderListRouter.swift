@@ -17,9 +17,11 @@ class OrderListRouter: OrderListRouterProtocol {
         return orderListViewController
     }
 
-    func presentOrderDetailScreen(from view: OrderListViewProtocol, for order: OrderItem) {
-        
-        let orderDetailVC = OrderDetailRouter.createOrderDetailRouterModule(with: order)
+    func presentOrderDetailScreen(from view: OrderListViewProtocol,
+                                  outputPreneter: OrderDetailPresenterOutputProtocol,
+                                  for order: OrderItem) {
+        let orderDetailVC = OrderDetailRouter.createOrderDetailRouterModule(with: order,
+        outputPresenter: outputPreneter)
         
         guard let viewVC = view as? UIViewController else {
             fatalError("Invalid View Protocol type")

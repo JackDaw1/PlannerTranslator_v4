@@ -5,7 +5,7 @@ class OrderDetailPresenter: OrderDetailPresenterProtocol {
     weak var view: OrderDetailViewProtocol?
     var router: OrderDetailRouterProtocol?
     var interactor: OrderDetailInteractorInputProtocol?
-    
+    var outputListPresenter: OrderDetailPresenterOutputProtocol?
     
     func viewDidLoad() {
         if let orderItem = interactor?.orderItem {
@@ -13,7 +13,7 @@ class OrderDetailPresenter: OrderDetailPresenterProtocol {
         }
     }
     
-    func editOrder(link: String?, deadline: Date?, made: Bool?, paid: Bool?, name: String, price: Double?, numberOfSigns: Int64?, customer:String?, time: Int64?) {
+    func editOrder(link: String?, deadline: Date?, made: Bool?, paid: Bool?, name: String?, price: Double?, numberOfSigns: Int64?, customer:String?, time: Int64?) {
         
         interactor?.editOrder(link: link, deadline: deadline, made: made, paid: paid, name: name, price: price, numberOfSigns: numberOfSigns, customer: customer, time: time)
     }
@@ -27,13 +27,16 @@ class OrderDetailPresenter: OrderDetailPresenterProtocol {
 extension OrderDetailPresenter: OrderDetailInteractorOutputProtocol {
     
     func didDeleteOrder() {
-        if let view = view {
+        if let view = view, let order = interactor?.orderItem {
+            outputListPresenter?.didDeleteOrder(order)
             router?.navigateBackToListViewController(from: view)
         }
     }
     
     func didEditOrder(_ order: OrderItem) {
-        view?.showOrder(order)
+        outputListPresenter?.didEditOrder(order)
+        if let view = view {
+            router?.navigateBackToListViewController(from: view)
+        }
     }
-    
 }

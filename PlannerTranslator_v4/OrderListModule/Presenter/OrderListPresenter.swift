@@ -9,7 +9,9 @@ class OrderListPresenter: OrderListPresenterProtocol {
     
     func showOrderDetail(_ order: OrderItem) {
         guard let view = view else { return }
-        router?.presentOrderDetailScreen(from: view, for: order)
+        router?.presentOrderDetailScreen(from: view,
+                                         outputPreneter: self,
+                                         for: order)
     }
     
     func addOrder(_ order: OrderItem) {
@@ -28,7 +30,7 @@ class OrderListPresenter: OrderListPresenterProtocol {
 
 extension OrderListPresenter: OrderListInteractorOutputProtocol {
     func didRemoveOrder(_ order: OrderItem) {
-        
+        interactor?.retrieveOrders()
     }
     
     
@@ -69,4 +71,18 @@ extension OrderListPresenter: OrderListInteractorOutputProtocol {
     func onError(message: String) {
         view?.showErrorMessage(message)
     }
+}
+
+extension OrderListPresenter: OrderDetailPresenterOutputProtocol {
+    func didDeleteOrder(_ order: OrderItem) {
+        //это обработка завершения редактирования заказа и закрытия экрана деталей заказа
+        //тут глушим полную перезагрузку экрана потому что она уже есть в viewWillAppear в презентере экрана OrdersListViewController
+//        interactor?.retrieveOrders()
+    }
+    
+    func didEditOrder(_ order: OrderItem) {
+        //тут глушим полную перезагрузку экрана потому что она уже есть в viewWillAppear в презентере экрана OrdersListViewController
+//        interactor?.retrieveOrders()
+    }
+    
 }
