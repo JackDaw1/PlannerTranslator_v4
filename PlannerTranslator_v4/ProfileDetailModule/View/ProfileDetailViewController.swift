@@ -98,14 +98,23 @@ class ProfileDetailViewController: UIViewController {
 
         shareButton.setTitle("Поделиться", for: .normal)
         view.addSubview(shareButton)
+        //shareButton.addTarget(self, action: #selector(didTapShareButton), for: .touchUpInside)
         shareButton.addTarget(self, action: #selector(didTapShareButton), for: .touchUpInside)
         shareButton.setTitleColor(.black, for: .normal)
         shareButton.backgroundColor = UIColor.lightGray
 
     }
     
-    @objc private func didTapShareButton() {
-        self.navigationController?.pushViewController(OrderListViewController(), animated: true)
+//    @objc private func didTapShareButton() {
+//        self.navigationController?.pushViewController(OrderListViewController(), animated: true)
+//    }
+    @objc func didTapShareButton(_ sender: Any) {
+        let textMyContacts = "Мои контакты: \n"
+        let objectsToShare: [Any] = [textMyContacts, nameTextField.text, contact1TextField.text, contact2TextField.text]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = sender as! UIView
+        
+        self.present(activityVC, animated: true, completion: nil)
     }
 }
 
