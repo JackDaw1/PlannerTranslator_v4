@@ -79,6 +79,15 @@ class IncomeListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }
+    
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let translationTranform = CATransform3DTranslate(CATransform3DIdentity, 0, 100, 0)
+        cell.layer.transform = translationTranform
+        
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut , animations: {
+            cell.layer.transform = CATransform3DIdentity
+        })
+    }
 }
 
 extension IncomeListViewController: IncomeListViewProtocol {

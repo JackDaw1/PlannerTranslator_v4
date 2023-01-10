@@ -69,9 +69,9 @@ class OrderListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         sectionsArray[section].date.toString()
     }
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        <#code#>
-//    }
+    //    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    //        <#code#>
+    //    }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sectionObject = sectionsArray[indexPath.section]
         let order = sectionObject.orders[indexPath.row]
@@ -86,15 +86,24 @@ class OrderListViewController: UITableViewController {
         }
     }
     
-@objc
-func addTapped(_ sender: Any) {
-    var addVC = AddOrderViewController()
-    addVC.handler = { [weak self] newOrder in
-        guard let self = self else { return }
-        self.presenter?.addOrder(newOrder)
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let translationTranform = CATransform3DTranslate(CATransform3DIdentity, 0, 100, 0)
+        cell.layer.transform = translationTranform
+        
+        UIView.animate(withDuration: 0.2, delay: 0, options: .allowAnimatedContent , animations: {
+            cell.layer.transform = CATransform3DIdentity
+        })
     }
-    addVC.modalPresentationStyle = .formSheet
-    present(addVC, animated: true)
+    
+    @objc
+    func addTapped(_ sender: Any) {
+        var addVC = AddOrderViewController()
+        addVC.handler = { [weak self] newOrder in
+            guard let self = self else { return }
+            self.presenter?.addOrder(newOrder)
+        }
+        addVC.modalPresentationStyle = .formSheet
+        present(addVC, animated: true)
     }
     
 }
@@ -103,7 +112,10 @@ extension OrderListViewController: OrderListViewProtocol {
     
     func showOrders(_ sections: [SectionOrdersItem]) {
         self.sectionsArray = sections
+
     }
+    
+
     
     func showErrorMessage(_ message: String) {
         let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)

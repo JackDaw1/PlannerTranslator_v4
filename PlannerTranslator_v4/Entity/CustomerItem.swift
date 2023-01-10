@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct SectionCustomersItem {
+    var customers: [CustomerItem] = []
+}
+
 class CustomerItem {
     var name: String
     var info: String?

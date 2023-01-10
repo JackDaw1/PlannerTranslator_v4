@@ -3,72 +3,65 @@
 //  PlannerTranslator_v4
 //
 //  Created by Galina Iaroshenko on 06.01.2023.
-// customer
-// Customer
 
 import UIKit
 
 class CustomerTableViewCell: UITableViewCell {
-
+    
     var customer: CustomerItem? {
-            didSet {
-                guard let customerItem = customer else {return}
-                let nameOfArticle = customerItem.name
-                    //profileImageView.image = UIImage(named: name)
-                    nameOfArticleLabel.text = nameOfArticle
+        didSet {
+            guard let customerItem = customer else {return}
+            let nameOfArticle = customerItem.name
+            profileImageView.image = UIImage(named: nameOfArticle)
+            nameOfArticleLabel.text = nameOfArticle
+            
+            if let customer = customerItem.info {
+                //profileImageView.image = UIImage(named: customer)
+                customerDetailedLabel.text = " \(customer) "
+            }
+            
+            if let price = customerItem.contact1 {
+                //countryImageView.image = UIImage(named: country)
+                priceDetailedLabel.text = " \(price) "
                 
-//                if let customer = orderItem.customer {
-//                    profileImageView.image = UIImage(named: customer)
-//                    customerDetailedLabel.text = " \(customer) "
-//                }
-                
-                if let customer = customerItem.info {
-                    profileImageView.image = UIImage(named: customer)
-                    customerDetailedLabel.text = " \(customer) "
-                }
-                
-                if let price = customerItem.contact1 {
-                    //countryImageView.image = UIImage(named: country)
-                    priceDetailedLabel.text = " \(price) "
-
-                }
             }
         }
+    }
     
     let containerView:UIView = {
-           let view = UIView()
-           view.translatesAutoresizingMaskIntoConstraints = false
-           view.clipsToBounds = true // this will make sure its children do not go out of the boundary
-           return view
-       }()
-       
-       let profileImageView:UIImageView = {
-           let img = UIImageView()
-           img.contentMode = .scaleAspectFill // image will never be strecthed vertially or horizontally
-           img.translatesAutoresizingMaskIntoConstraints = false // enable autolayout
-           img.layer.cornerRadius = 35
-           img.clipsToBounds = true
-           return img
-       }()
-       
-       let nameOfArticleLabel:UILabel = {
-           let label = UILabel()
-           label.font = UIFont.boldSystemFont(ofSize: 20)
-           label.textColor = .black
-           label.translatesAutoresizingMaskIntoConstraints = false
-           return label
-       }()
-       
-       let customerDetailedLabel:UILabel = {
-           let label = UILabel()
-           label.font = UIFont.boldSystemFont(ofSize: 14)
-           label.textColor =  .white
-           label.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
-           label.layer.cornerRadius = 5
-           label.clipsToBounds = true
-           label.translatesAutoresizingMaskIntoConstraints = false
-           return label
-       }()
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.clipsToBounds = true // this will make sure its children do not go out of the boundary
+        return view
+    }()
+    
+    let profileImageView:UIImageView = {
+        let img = UIImageView()
+        img.contentMode = .scaleAspectFill // image will never be strecthed vertially or horizontally
+        img.translatesAutoresizingMaskIntoConstraints = false // enable autolayout
+        img.layer.cornerRadius = 35
+        img.clipsToBounds = true
+        return img
+    }()
+    
+    let nameOfArticleLabel:UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 20)
+        label.textColor = .black
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let customerDetailedLabel:UILabel = {
+        let label = UILabel()
+        label.font = UIFont.boldSystemFont(ofSize: 14)
+        label.textColor =  .white
+        label.backgroundColor = #colorLiteral(red: 0.1764705926, green: 0.4980392158, blue: 0.7568627596, alpha: 1)
+        label.layer.cornerRadius = 5
+        label.clipsToBounds = true
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
     
     let priceDetailedLabel:UILabel = {
         let label = UILabel()
@@ -81,44 +74,44 @@ class CustomerTableViewCell: UITableViewCell {
         return label
     }()
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-            super.init(style: style, reuseIdentifier: reuseIdentifier)
-            
-            self.contentView.addSubview(profileImageView)
-            containerView.addSubview(nameOfArticleLabel)
-            containerView.addSubview(customerDetailedLabel)
-            containerView.addSubview(priceDetailedLabel)
-            self.contentView.addSubview(containerView)
-            //self.contentView.addSubview(countryImageView)
-            
-            profileImageView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
-            profileImageView.leadingAnchor.constraint(equalTo:self.contentView.leadingAnchor, constant:10).isActive = true
-            profileImageView.widthAnchor.constraint(equalToConstant:70).isActive = true
-            profileImageView.heightAnchor.constraint(equalToConstant:70).isActive = true
-            
-            containerView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
-            containerView.leadingAnchor.constraint(equalTo:self.profileImageView.trailingAnchor, constant:10).isActive = true
-            containerView.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:-10).isActive = true
-            containerView.heightAnchor.constraint(equalToConstant:40).isActive = true
-            
-        nameOfArticleLabel.topAnchor.constraint(equalTo:self.containerView.topAnchor).isActive = true
-        nameOfArticleLabel.leadingAnchor.constraint(equalTo:self.containerView.leadingAnchor).isActive = true
-        nameOfArticleLabel.trailingAnchor.constraint(equalTo:self.containerView.trailingAnchor).isActive = true
-            
-        customerDetailedLabel.topAnchor.constraint(equalTo:self.nameOfArticleLabel.bottomAnchor).isActive = true
-        customerDetailedLabel.leadingAnchor.constraint(equalTo:self.containerView.leadingAnchor).isActive = true
-        /*
-        customerDetailedLabel.topAnchor.constraint(equalTo:self.nameOfArticleLabel.bottomAnchor).isActive = true
-        customerDetailedLabel.leadingAnchor.constraint(equalTo:self.containerView.leadingAnchor).isActive = true
-        */
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        priceDetailedLabel.topAnchor.constraint(equalTo:self.customerDetailedLabel.bottomAnchor).isActive = true
-        priceDetailedLabel.leadingAnchor.constraint(equalTo:self.containerView.leadingAnchor).isActive = true
-            
-        }
+        self.contentView.addSubview(profileImageView)
+        containerView.addSubview(nameOfArticleLabel)
+        containerView.addSubview(customerDetailedLabel)
+        containerView.addSubview(priceDetailedLabel)
+        self.contentView.addSubview(containerView)
         
-        required init?(coder aDecoder: NSCoder) {
-            super.init(coder: aDecoder)
-        }
-
+        nameOfArticleLabel.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: NSLayoutConstraint.Axis.horizontal)
+        customerDetailedLabel.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: NSLayoutConstraint.Axis.horizontal)
+        
+        NSLayoutConstraint.activate([
+            profileImageView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor),
+            profileImageView.leadingAnchor.constraint(equalTo:self.contentView.leadingAnchor, constant:10),
+            profileImageView.widthAnchor.constraint(equalToConstant:70),
+            profileImageView.heightAnchor.constraint(equalToConstant:70),
+            
+            containerView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor),
+            containerView.leadingAnchor.constraint(equalTo:self.profileImageView.trailingAnchor, constant:10),
+            containerView.trailingAnchor.constraint(equalTo:self.contentView.trailingAnchor, constant:-10),
+            containerView.heightAnchor.constraint(equalToConstant:40),
+            
+            nameOfArticleLabel.topAnchor.constraint(equalTo:self.containerView.topAnchor),
+            nameOfArticleLabel.leadingAnchor.constraint(equalTo:self.containerView.leadingAnchor),
+            nameOfArticleLabel.trailingAnchor.constraint(equalTo:self.containerView.trailingAnchor),
+            
+            customerDetailedLabel.topAnchor.constraint(equalTo:self.nameOfArticleLabel.bottomAnchor),
+            customerDetailedLabel.leadingAnchor.constraint(equalTo:self.containerView.leadingAnchor),
+            
+            priceDetailedLabel.topAnchor.constraint(equalTo:self.customerDetailedLabel.bottomAnchor),
+            priceDetailedLabel.leadingAnchor.constraint(equalTo:self.containerView.leadingAnchor),
+            
+        ])
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+}
 

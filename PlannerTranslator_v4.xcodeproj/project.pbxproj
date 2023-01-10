@@ -15,6 +15,12 @@
 		FE420006296D25D50008F502 /* NetworkEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE420004296D25D30008F502 /* NetworkEntities.swift */; };
 		FE420007296D25D60008F502 /* NetworkEntities.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE420004296D25D30008F502 /* NetworkEntities.swift */; };
 		FE420008296D26110008F502 /* OrderDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9552F829668E1A001CE332 /* OrderDetailProtocols.swift */; };
+		FE42000B296D78510008F502 /* CustomerListMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE42000A296D78510008F502 /* CustomerListMocks.swift */; };
+		FE42000C296D7AC80008F502 /* CustomerListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95531E2967481B001CE332 /* CustomerListPresenter.swift */; };
+		FE42000D296D7ACD0008F502 /* CustomerListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9553202967492E001CE332 /* CustomerListProtocols.swift */; };
+		FE42000E296D7AD00008F502 /* CustomerListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9553222967C9D7001CE332 /* CustomerListInteractor.swift */; };
+		FE42000F296D7AD30008F502 /* CustomerListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95531229674026001CE332 /* CustomerListRouter.swift */; };
+		FE420010296D7AF00008F502 /* CustomerListMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE42000A296D78510008F502 /* CustomerListMocks.swift */; };
 		FE4DE144296AAF350055FCE1 /* MoyaRequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE13F296AAF350055FCE1 /* MoyaRequestType.swift */; };
 		FE4DE147296AAF350055FCE1 /* MoyaNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE140296AAF350055FCE1 /* MoyaNetworkManager.swift */; };
 		FE4DE14A296AAF350055FCE1 /* OrdersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4DE141296AAF350055FCE1 /* OrdersModel.swift */; };
@@ -125,6 +131,7 @@
 		EED573DE4116DFA2D6C47142 /* Pods-PlannerTranslator_v4-PlannerTranslator_v4Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlannerTranslator_v4-PlannerTranslator_v4Tests.debug.xcconfig"; path = "Target Support Files/Pods-PlannerTranslator_v4-PlannerTranslator_v4Tests/Pods-PlannerTranslator_v4-PlannerTranslator_v4Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE420000296D21D10008F502 /* ProfileMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMocks.swift; sourceTree = "<group>"; };
 		FE420004296D25D30008F502 /* NetworkEntities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkEntities.swift; sourceTree = "<group>"; };
+		FE42000A296D78510008F502 /* CustomerListMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerListMocks.swift; sourceTree = "<group>"; };
 		FE4DE13F296AAF350055FCE1 /* MoyaRequestType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaRequestType.swift; sourceTree = "<group>"; };
 		FE4DE140296AAF350055FCE1 /* MoyaNetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoyaNetworkManager.swift; sourceTree = "<group>"; };
 		FE4DE141296AAF350055FCE1 /* OrdersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrdersModel.swift; sourceTree = "<group>"; };
@@ -246,6 +253,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FE420009296D78220008F502 /* CustomerListMock */ = {
+			isa = PBXGroup;
+			children = (
+				FE42000A296D78510008F502 /* CustomerListMocks.swift */,
+			);
+			path = CustomerListMock;
+			sourceTree = "<group>";
+		};
 		FE42FFFF296D21B80008F502 /* ProfileMock */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +357,7 @@
 		FE91B1CE296564910063ED03 /* PlannerTranslator_v4Tests */ = {
 			isa = PBXGroup;
 			children = (
+				FE420009296D78220008F502 /* CustomerListMock */,
 				FE42FFFF296D21B80008F502 /* ProfileMock */,
 				FE4DE173296BC9FA0055FCE1 /* OrderListMock */,
 				FE91B1CF296564910063ED03 /* PlannerTranslator_v4Tests.swift */,
@@ -1011,6 +1027,7 @@
 				FE95536D2969CDCB001CE332 /* IncomeListInteractor.swift in Sources */,
 				FE95533929696688001CE332 /* ProfileDetailPresenter.swift in Sources */,
 				FE9553212967492E001CE332 /* CustomerListProtocols.swift in Sources */,
+				FE420010296D7AF00008F502 /* CustomerListMocks.swift in Sources */,
 				FE95531F2967481B001CE332 /* CustomerListPresenter.swift in Sources */,
 				FE4DE14D296AAF350055FCE1 /* MoyaRequestType+TestData.swift in Sources */,
 				FE95530F296738A4001CE332 /* CustomerListViewController.swift in Sources */,
@@ -1025,7 +1042,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE4DE16B296BC1BA0055FCE1 /* CustomerItem.swift in Sources */,
+				FE42000B296D78510008F502 /* CustomerListMocks.swift in Sources */,
 				FE4DE16A296BC1B70055FCE1 /* OrderAPI.swift in Sources */,
+				FE42000D296D7ACD0008F502 /* CustomerListProtocols.swift in Sources */,
+				FE42000E296D7AD00008F502 /* CustomerListInteractor.swift in Sources */,
 				FE420001296D21D10008F502 /* ProfileMocks.swift in Sources */,
 				FE4DE16C296BC1BC0055FCE1 /* CustomerAPI.swift in Sources */,
 				FE4DE169296BC1B40055FCE1 /* OrderItem.swift in Sources */,
@@ -1037,9 +1057,11 @@
 				FE420003296D23590008F502 /* ProfileDetailProtocols.swift in Sources */,
 				FE4DE175296BCA170055FCE1 /* OrderListMocks.swift in Sources */,
 				FE4DE177296BCCA90055FCE1 /* OrderListProtocols.swift in Sources */,
+				FE42000C296D7AC80008F502 /* CustomerListPresenter.swift in Sources */,
 				FE4DE16D296BC1BF0055FCE1 /* ProfileItem.swift in Sources */,
 				FE4DE16E296BC1C10055FCE1 /* ProfileAPI.swift in Sources */,
 				FE4DE171296BC6390055FCE1 /* Helper.swift in Sources */,
+				FE42000F296D7AD30008F502 /* CustomerListRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

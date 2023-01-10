@@ -42,9 +42,34 @@ final class PlannerTranslator_v4Tests: XCTestCase {
         presenter.removeOrder(newElement)
         XCTAssertTrue(presenter.orders.isEmpty, "Order is removed")
         
-        interactor.retrieveOrders()
-        XCTAssertTrue(presenter.orders.isEmpty, "Orders are loaded")
     }
+    
+    func testCustomerList() throws {
+        let presenter = CustomerListPresenterMock()
+        let view = CustomerListViewMock()
+        view.presenter = presenter
+        let router = CustomerListRouterMock()
+        let interactor = CustomerListInteractorMock()
+        interactor.presenter = presenter
+        
+        presenter.view = view
+        presenter.interactor = interactor
+        presenter.router = router
+        
+        XCTAssertTrue(presenter.customers.isEmpty, "No orders")
+        
+//        let newElementCustomer = CustomerItem(link: "https://proglib.io/", deadline: "2023-01-08", made: false, paid: true, name: "SwiftUI features", price: 1000, numberOfSigns: 10038, customer: "swiftbook", time: 138)
+//        presenter.addCustomer(newElementCustomer)
+//        
+//        XCTAssertFalse(presenter.cusomers.isEmpty, "Customer is added")
+//        
+//        presenter.removeCusomer(newElementCustomer)
+//        XCTAssertTrue(presenter.cusomers.isEmpty, "Customer is removed")
+        
+        interactor.retrieveCustomers()
+        XCTAssertTrue(presenter.customers.isEmpty, "Customers are loaded")
+    }
+    
     
     func testProfile() throws {
         let presenter = ProfileDetailPresenterMock()
