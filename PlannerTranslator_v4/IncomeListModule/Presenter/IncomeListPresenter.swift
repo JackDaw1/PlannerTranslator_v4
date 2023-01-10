@@ -49,6 +49,8 @@ extension IncomeListPresenter: IncomeListInteractorOutputProtocol {
             }
         }
         sectionsResult.append(sectionItem)
+        
+
         view?.showIncomes(sectionsResult)
     }
     

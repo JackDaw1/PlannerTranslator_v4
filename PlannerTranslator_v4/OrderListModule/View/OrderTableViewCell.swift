@@ -1,13 +1,10 @@
 import UIKit
 
 class OrderTableViewCell: UITableViewCell {
-    
-    //???????????????????????????????
     var order: OrderItem? {
         didSet {
             guard let orderItem = order else {return}
             let nameOfArticle = orderItem.name
-            //profileImageView.image = UIImage(named: name)
             nameOfArticleLabel.text = nameOfArticle
             
             if let customer = orderItem.customer {
@@ -16,9 +13,7 @@ class OrderTableViewCell: UITableViewCell {
             }
             
             if let price = orderItem.price {
-                //countryImageView.image = UIImage(named: country)
                 priceDetailedLabel.text = " \(price) "
-                
             }
         }
     }
@@ -74,7 +69,7 @@ class OrderTableViewCell: UITableViewCell {
             profileImageView.topAnchor.constraint(greaterThanOrEqualTo: contentView.topAnchor),
             profileImageView.bottomAnchor.constraint(lessThanOrEqualTo: contentView.bottomAnchor),
             profileImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,
-                                                     constant: 10),
+                                                      constant: 10),
             profileImageView.widthAnchor.constraint(equalToConstant: 70),
             profileImageView.heightAnchor.constraint(equalToConstant: 70),
             profileImageView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor),

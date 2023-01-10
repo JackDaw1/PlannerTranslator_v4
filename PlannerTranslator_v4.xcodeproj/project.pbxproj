@@ -90,11 +90,6 @@
 		FE95534529696CA1001CE332 /* ProfileAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95534429696CA1001CE332 /* ProfileAPI.swift */; };
 		FE955347296989E0001CE332 /* ProfileDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE955346296989E0001CE332 /* ProfileDetailInteractor.swift */; };
 		FE95534929698A5E001CE332 /* ProfileDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE95534829698A5E001CE332 /* ProfileDetailRouter.swift */; };
-		FE9553512969C964001CE332 /* IncomeDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9553502969C964001CE332 /* IncomeDetailPresenter.swift */; };
-		FE9553532969C98B001CE332 /* IncomeDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9553522969C98B001CE332 /* IncomeDetailProtocols.swift */; };
-		FE9553552969CC40001CE332 /* IncomeDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9553542969CC40001CE332 /* IncomeDetailInteractor.swift */; };
-		FE9553572969CC6F001CE332 /* IncomeDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9553562969CC6F001CE332 /* IncomeDetailRouter.swift */; };
-		FE9553592969CC9F001CE332 /* IncomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9553582969CC9F001CE332 /* IncomeDetailViewController.swift */; };
 		FE9553612969CD1B001CE332 /* IncomeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9553602969CD1B001CE332 /* IncomeListPresenter.swift */; };
 		FE9553632969CD3F001CE332 /* IncomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9553622969CD3F001CE332 /* IncomeTableViewCell.swift */; };
 		FE9553652969CD4F001CE332 /* IncomeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9553642969CD4F001CE332 /* IncomeListViewController.swift */; };
@@ -191,11 +186,6 @@
 		FE95534429696CA1001CE332 /* ProfileAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAPI.swift; sourceTree = "<group>"; };
 		FE955346296989E0001CE332 /* ProfileDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailInteractor.swift; sourceTree = "<group>"; };
 		FE95534829698A5E001CE332 /* ProfileDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDetailRouter.swift; sourceTree = "<group>"; };
-		FE9553502969C964001CE332 /* IncomeDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeDetailPresenter.swift; sourceTree = "<group>"; };
-		FE9553522969C98B001CE332 /* IncomeDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeDetailProtocols.swift; sourceTree = "<group>"; };
-		FE9553542969CC40001CE332 /* IncomeDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeDetailInteractor.swift; sourceTree = "<group>"; };
-		FE9553562969CC6F001CE332 /* IncomeDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeDetailRouter.swift; sourceTree = "<group>"; };
-		FE9553582969CC9F001CE332 /* IncomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeDetailViewController.swift; sourceTree = "<group>"; };
 		FE9553602969CD1B001CE332 /* IncomeListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeListPresenter.swift; sourceTree = "<group>"; };
 		FE9553622969CD3F001CE332 /* IncomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeTableViewCell.swift; sourceTree = "<group>"; };
 		FE9553642969CD4F001CE332 /* IncomeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeListViewController.swift; sourceTree = "<group>"; };
@@ -332,7 +322,6 @@
 		FE91B1B4296564900063ED03 /* PlannerTranslator_v4 */ = {
 			isa = PBXGroup;
 			children = (
-				FE95534A2969C8A6001CE332 /* IncomeDetailModule */,
 				FE95535A2969CCD3001CE332 /* IncomeListModule */,
 				FE9552E629668E1A001CE332 /* OrderListModule */,
 				FE9553362969665F001CE332 /* ProfileDetailModule */,
@@ -652,58 +641,6 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
-		FE95534A2969C8A6001CE332 /* IncomeDetailModule */ = {
-			isa = PBXGroup;
-			children = (
-				FE95534F2969C93F001CE332 /* Presenter */,
-				FE95534E2969C935001CE332 /* Protocols */,
-				FE95534D2969C92F001CE332 /* Interactor */,
-				FE95534C2969C929001CE332 /* Router */,
-				FE95534B2969C919001CE332 /* View */,
-			);
-			path = IncomeDetailModule;
-			sourceTree = "<group>";
-		};
-		FE95534B2969C919001CE332 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				FE9553582969CC9F001CE332 /* IncomeDetailViewController.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		FE95534C2969C929001CE332 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				FE9553562969CC6F001CE332 /* IncomeDetailRouter.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		FE95534D2969C92F001CE332 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				FE9553542969CC40001CE332 /* IncomeDetailInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		FE95534E2969C935001CE332 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				FE9553522969C98B001CE332 /* IncomeDetailProtocols.swift */,
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		FE95534F2969C93F001CE332 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				FE9553502969C964001CE332 /* IncomeDetailPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
 		FE95535A2969CCD3001CE332 /* IncomeListModule */ = {
 			isa = PBXGroup;
 			children = (
@@ -974,10 +911,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE4DE14A296AAF350055FCE1 /* OrdersModel.swift in Sources */,
-				FE9553512969C964001CE332 /* IncomeDetailPresenter.swift in Sources */,
-				FE9553572969CC6F001CE332 /* IncomeDetailRouter.swift in Sources */,
 				FE9553152967416D001CE332 /* CustomerDetailProtocols.swift in Sources */,
-				FE9553532969C98B001CE332 /* IncomeDetailProtocols.swift in Sources */,
 				FE95533F2969687D001CE332 /* ProfileDetailViewController.swift in Sources */,
 				FE95530729668E1A001CE332 /* OrderDetailRouter.swift in Sources */,
 				FE4DE176296BCA1A0055FCE1 /* OrderListMocks.swift in Sources */,
@@ -987,7 +921,6 @@
 				FE9553632969CD3F001CE332 /* IncomeTableViewCell.swift in Sources */,
 				FE4DE144296AAF350055FCE1 /* MoyaRequestType.swift in Sources */,
 				FE95530929668EBD001CE332 /* OrderAPI.swift in Sources */,
-				FE9553552969CC40001CE332 /* IncomeDetailInteractor.swift in Sources */,
 				FE9553232967C9D7001CE332 /* CustomerListInteractor.swift in Sources */,
 				FE91B1C0296564900063ED03 /* PlannerTranslator_v4.xcdatamodeld in Sources */,
 				FE91B1BA296564900063ED03 /* ViewController.swift in Sources */,
@@ -1005,7 +938,6 @@
 				FE9553612969CD1B001CE332 /* IncomeListPresenter.swift in Sources */,
 				FE9553652969CD4F001CE332 /* IncomeListViewController.swift in Sources */,
 				FE9552FD29668E1A001CE332 /* OrderListPresenter.swift in Sources */,
-				FE9553592969CC9F001CE332 /* IncomeDetailViewController.swift in Sources */,
 				FE95534329696C93001CE332 /* ProfileItem.swift in Sources */,
 				FE4DE150296AAF350055FCE1 /* ResponseAPI.swift in Sources */,
 				FE95530229668E1A001CE332 /* MainTabbarViewController.swift in Sources */,

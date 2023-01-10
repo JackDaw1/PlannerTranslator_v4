@@ -39,27 +39,30 @@ extension OrderListPresenter: OrderListInteractorOutputProtocol {
     }
     
     func didRetrieveOrders(_ orders: [OrderItem]) {
+        let deadline = orders.first?.deadline?.toDate()
         guard !orders.isEmpty else { return }
-        
         let array = orders
             .filter({ $0.made != true })
             .sorted { order1, order2 in
                 guard let deadline1 = order1.deadline?.toDate(), let deadline2 = order2.deadline?.toDate() else {
-                return false
+                    return false
+                }
+                return deadline1 < deadline2
             }
-            return deadline1 < deadline2
-        }
         
         var sectionsResult = [SectionOrdersItem]()
-        let deadline = orders.first?.deadline?.toDate()
+        //let deadline = orders.first?.deadline?.toDate()
         var currentDate = deadline ?? Date()
         var sectionItem: SectionOrdersItem = SectionOrdersItem(date: currentDate)
         for order in array {
-            if let deadline = order.deadline?.toDate(), abs(deadline.timeIntervalSince(currentDate)) > 24*60*59 {
-                sectionsResult.append(sectionItem)
+            if let deadline = order.deadline?.toDate(),  abs(deadline.timeIntervalSince(currentDate)) > 24*60*59 {
+                if sectionItem.orders.isEmpty != true {
+                    sectionsResult.append(sectionItem)
+                }
                 currentDate = order.deadline?.toDate() ?? Date()
                 sectionItem = SectionOrdersItem(date: currentDate)
                 sectionItem.orders.append(order)
+                
             } else {
                 sectionItem.orders.append(order)
             }
@@ -77,12 +80,12 @@ extension OrderListPresenter: OrderDetailPresenterOutputProtocol {
     func didDeleteOrder(_ order: OrderItem) {
         //это обработка завершения редактирования заказа и закрытия экрана деталей заказа
         //тут глушим полную перезагрузку экрана потому что она уже есть в viewWillAppear в презентере экрана OrdersListViewController
-//        interactor?.retrieveOrders()
+        //        interactor?.retrieveOrders()
     }
     
     func didEditOrder(_ order: OrderItem) {
         //тут глушим полную перезагрузку экрана потому что она уже есть в viewWillAppear в презентере экрана OrdersListViewController
-//        interactor?.retrieveOrders()
+        //        interactor?.retrieveOrders()
     }
     
 }

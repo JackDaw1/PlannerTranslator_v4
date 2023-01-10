@@ -71,7 +71,14 @@ class IncomeListViewController: UITableViewController {
 //        sectionsArray[section].date.toString()
 //    }
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        sectionsArray[section].date.toString()+": "+sectionsArray[section].sum
+        //sectionsArray[section].date.toString()+": "+sectionsArray[section].sum
+        if (Double(sectionsArray[section].sum) != 0.0) {
+            return "Общий доход: " + sectionsArray[section].sum
+        }
+        else
+        {
+            return nil
+        }
     }
     //    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     //        <#code#>

@@ -67,7 +67,9 @@ class OrderListViewController: UITableViewController {
         UITableView.automaticDimension
     }
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        sectionsArray[section].date.toString()
+
+            sectionsArray[section].date.toString()
+        
     }
     //    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
     //        <#code#>

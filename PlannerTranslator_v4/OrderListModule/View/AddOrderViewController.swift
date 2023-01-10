@@ -5,6 +5,8 @@ class AddOrderViewController: UIViewController, UIPickerViewDelegate {
     
     var nameTextField: UITextField = UITextField()
     var priceTextField: UITextField = UITextField()
+    var customerTextField: UITextField = UITextField()
+    var deadlineLabel: UILabel = UILabel()
     var saveButton: UIButton = UIButton()
     var pickView: UIDatePicker = UIDatePicker()
     private var selectedDate: String? = nil
@@ -13,9 +15,11 @@ class AddOrderViewController: UIViewController, UIPickerViewDelegate {
     private func baseConfigure() {
         view.backgroundColor = UIColor.white
         
-        nameTextField.placeholder = "Enter name"
-        priceTextField.placeholder = "Enter price"
+        nameTextField.placeholder = "Название заказа"
+        priceTextField.placeholder = "Стоимость"
         priceTextField.keyboardType = UIKeyboardType.numberPad
+        customerTextField.placeholder = "Заказчик"
+        //deadlineLabel.text = "Дедлайн: "
         saveButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
         saveButton.setTitleColor(UIColor.gray, for: UIControl.State.selected)
         
@@ -29,25 +33,27 @@ class AddOrderViewController: UIViewController, UIPickerViewDelegate {
     
     @objc
     func datePickerValueChanged(_ sender: UIDatePicker){
-            
-            // Create date formatter
-            let dateFormatter: DateFormatter = DateFormatter()
-            
-            // Set date format
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            
-            // Apply date format
-            selectedDate = dateFormatter.string(from: sender.date)
-            
-            print("Selected value \(selectedDate)")
         
-        }
+        // Create date formatter
+        let dateFormatter: DateFormatter = DateFormatter()
+        
+        // Set date format
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        // Apply date format
+        selectedDate = dateFormatter.string(from: sender.date)
+        
+        //print("Selected value \(selectedDate)")
+        
+    }
     
     func setupConstraints() {
         [
             nameTextField,
             priceTextField,
             pickView,
+            customerTextField,
+            deadlineLabel,
             saveButton
         ].forEach { customView in
             view.addSubview(customView)
@@ -66,15 +72,23 @@ class AddOrderViewController: UIViewController, UIPickerViewDelegate {
             priceTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor),
             priceTextField.heightAnchor.constraint(equalToConstant: 60),
             
-            pickView.topAnchor.constraint(equalTo: priceTextField.bottomAnchor),
-            pickView.leadingAnchor.constraint(equalTo: priceTextField.leadingAnchor),
-            pickView.trailingAnchor.constraint(equalTo: priceTextField.trailingAnchor),
-            pickView.heightAnchor.constraint(equalToConstant: 200),
-            pickView.bottomAnchor.constraint(equalTo: saveButton.bottomAnchor),
+            customerTextField.leadingAnchor.constraint(equalTo: priceTextField.leadingAnchor),
+            customerTextField.trailingAnchor.constraint(equalTo: priceTextField.trailingAnchor),
+            customerTextField.topAnchor.constraint(equalTo: priceTextField.bottomAnchor),
+            customerTextField.heightAnchor.constraint(equalToConstant: 60),
             
-            saveButton.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor),
-            saveButton.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
-            saveButton.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor),
+            //            pickView.leadingAnchor.constraint(equalTo: customerTextField.leadingAnchor),
+            //            pickView.trailingAnchor.constraint(equalTo: customerTextField.trailingAnchor),
+            pickView.topAnchor.constraint(equalTo: customerTextField.bottomAnchor),
+            pickView.heightAnchor.constraint(equalToConstant: 60),
+            //pickView.bottomAnchor.constraint(equalTo: saveButton.bottomAnchor),
+            pickView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            
+            saveButton.leadingAnchor.constraint(equalTo: pickView.leadingAnchor),
+            saveButton.trailingAnchor.constraint(equalTo: pickView.trailingAnchor),
+            //saveButton.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor),
+            saveButton.topAnchor.constraint(equalTo: pickView.bottomAnchor),
         ])
     }
     
@@ -82,32 +96,35 @@ class AddOrderViewController: UIViewController, UIPickerViewDelegate {
         super.viewDidLoad()
         setupConstraints()
         baseConfigure()
+        
+        saveButton.setTitleColor(.black, for: .normal)
+        saveButton.backgroundColor = UIColor.lightGray
     }
     
     @objc
     func save() {
         //TODO: настроить алерт сообщение о важности внесения имени
-        handler?(OrderItem(link: nil, deadline: selectedDate, paid: nil, name: nameTextField.text ?? "", price: Double(priceTextField.text ?? "0"), numberOfSigns: nil, customer: nil))
-//        switchView.isSelected
-//        pickView.selectedRow(inComponent: 0)
+        handler?(OrderItem(link: nil, deadline: selectedDate, paid: nil, name: nameTextField.text ?? "", price: Double(priceTextField.text ?? "0"), numberOfSigns: nil, customer: customerTextField.text ?? ""))
+        //        switchView.isSelected
+        //        pickView.selectedRow(inComponent: 0)
         self.dismiss(animated: true)
     }
-//
-//    func editTapped(_ sender: Any) {
-//        let alertController = UIAlertController(title: "Edit Order Item", message: "Enter title and content", preferredStyle: .alert)
-//
-//        alertController.addTextField { $0.text = self.titleLabel.text }
-//        alertController.addTextField { $0.text = self.contentLabel.text }
-//        alertController.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { [weak self](_) in
-//            let titleText = alertController.textFields![0].text ?? ""
-//            let contentText = alertController.textFields![1].text ?? ""
-//            guard !titleText.isEmpty else { return }
-//            self?.presenter?.editOrder(title: titleText, content: contentText)
-//        }))
-//
-//        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//        present(alertController, animated: true, completion: nil)
-//
-//    }
+    //
+    //    func editTapped(_ sender: Any) {
+    //        let alertController = UIAlertController(title: "Edit Order Item", message: "Enter title and content", preferredStyle: .alert)
+    //
+    //        alertController.addTextField { $0.text = self.titleLabel.text }
+    //        alertController.addTextField { $0.text = self.contentLabel.text }
+    //        alertController.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { [weak self](_) in
+    //            let titleText = alertController.textFields![0].text ?? ""
+    //            let contentText = alertController.textFields![1].text ?? ""
+    //            guard !titleText.isEmpty else { return }
+    //            self?.presenter?.editOrder(title: titleText, content: contentText)
+    //        }))
+    //
+    //        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+    //        present(alertController, animated: true, completion: nil)
+    //
+    //    }
     
 }
