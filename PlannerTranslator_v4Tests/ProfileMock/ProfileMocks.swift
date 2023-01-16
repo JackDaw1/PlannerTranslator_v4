@@ -1,10 +1,3 @@
-//
-//  ProfileMocks.swift
-//  PlannerTranslator_v4Tests
-//
-//  Created by Galina Iaroshenko on 10.01.2023.
-//
-
 import UIKit
 
 final class ProfileDetailPresenterMock: ProfileDetailPresenterProtocol {

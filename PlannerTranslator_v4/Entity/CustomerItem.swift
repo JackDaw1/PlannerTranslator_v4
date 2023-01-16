@@ -1,10 +1,3 @@
-//
-//  CustomerItem.swift
-//  PlannerTranslator_v4
-//
-//  Created by Galina Iaroshenko on 05.01.2023.
-//
-
 import Foundation
 
 struct SectionCustomersItem {

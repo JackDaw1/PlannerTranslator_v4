@@ -8,21 +8,17 @@ class MainTabBarController: UITabBarController {
         generateTabBar()
         setTabBarAppearance()
     }
-
-    
     
     fileprivate func createNavController(for rootViewController: UIViewController,
-                                        title: String,
-                                        image:  UIImage) -> UIViewController {
-           let navController = UINavigationController(rootViewController: rootViewController)
-           navController.tabBarItem.title = title
+                                         title: String,
+                                         image:  UIImage) -> UIViewController {
+        let navController = UINavigationController(rootViewController: rootViewController)
+        navController.tabBarItem.title = title
         navController.tabBarItem.image = image
-        navController.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10) //imageInsets - отступы картинки внутри UIImageView
-           //navController.navigationBar.prefersLargeTitles = true
-           rootViewController.navigationItem.title = title
-           return navController
-       }
-     
+        navController.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
+        rootViewController.navigationItem.title = title
+        return navController
+    }
     
     private func generateTabBar() {
         viewControllers = [
@@ -55,19 +51,16 @@ class MainTabBarController: UITabBarController {
         return viewController
     }
     
-  
-    
     private func setTabBarAppearance() {
         
         let positionOnX: CGFloat = 10
         let positionOnY: CGFloat = 14
-
+        
         let width = tabBar.bounds.width - positionOnX * 2
         let height = tabBar.bounds.height + positionOnY * 2
         
         tabBar.itemWidth = width / 4
         tabBar.itemPositioning = .centered
     }
-
     
 }

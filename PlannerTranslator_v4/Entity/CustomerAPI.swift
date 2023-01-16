@@ -1,15 +1,3 @@
-//
-//  CustomerAPI.swift
-//  PlannerTranslator_v4
-//
-//  Created by Galina Iaroshenko on 05.01.2023.
-//
-
-//var name: String
-//var info: String?
-//var contact1: String?
-//var contact2: String?
-
 import Foundation
 
 class CustomerAPI {
@@ -40,7 +28,6 @@ class CustomerAPI {
         RFC3339DateFormatter.dateFormat = "yyyy-MM-dd"
         RFC3339DateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
 
-        //let string = "1996-12-19T16:39:57-08:00"
         return RFC3339DateFormatter.date(from: value)
     }
     

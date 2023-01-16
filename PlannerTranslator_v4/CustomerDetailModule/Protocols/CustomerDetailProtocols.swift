@@ -1,15 +1,3 @@
-//
-//  ProfileDetailProtocols.swift
-//  PlannerTranslator_v4
-//
-//  Created by Galina Iaroshenko on 06.01.2023.
-//
-
-//var name: String
-//var info: String?
-//var contact1: String?
-//var contact2: String?
-
 import UIKit
 
 protocol CustomerDetailViewProtocol: class {
@@ -28,7 +16,6 @@ protocol CustomerDetailPresenterProtocol: class {
     
     // VIEW -> PRESENTER
     func viewDidLoad()
-    //!!!!!!!!!!!!!!!!!!!!
     func editCustomer(name: String, info: String?, contact1: String?, contact2: String?)
     func deleteCustomer()
 }
@@ -40,7 +27,6 @@ protocol CustomerDetailInteractorInputProtocol: class {
     
     // PRESENTER -> INTERACTOR
     func deleteCustomer()
-    //!!!!!!!!!!!!!!!!!!!
     func editCustomer(name: String, info: String?, contact1: String?, contact2: String?)
 }
 

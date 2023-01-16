@@ -8,11 +8,10 @@
 import Foundation
 
 class ProfileDetailPresenter: ProfileDetailPresenterProtocol {
-
+    
     weak var view: ProfileDetailViewProtocol?
     var router: ProfileDetailRouterProtocol?
     var interactor: ProfileDetailInteractorInputProtocol?
-    
     
     func viewDidLoad() {
         if let profileItem = interactor?.profileItem {
@@ -27,13 +26,13 @@ class ProfileDetailPresenter: ProfileDetailPresenterProtocol {
 }
 
 extension ProfileDetailPresenter: ProfileDetailInteractorOutputProtocol {
-
     
-//    func didDeleteOrder() {
-//        if let view = view {
-//            router?.navigateBackToListViewController(from: view)
-//        }
-//    }
+    
+    //    func didDeleteOrder() {
+    //        if let view = view {
+    //            router?.navigateBackToListViewController(from: view)
+    //        }
+    //    }
     
     func didEditProfile(_ profile: ProfileItem) {
         view?.showProfile(profile)

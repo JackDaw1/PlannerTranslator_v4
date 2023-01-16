@@ -1,10 +1,3 @@
-//
-//  TaskDTOModel.swift
-//  TableView_v5
-//
-//  Created by Galina Iaroshenko on 20.12.2022.
-//
-
 import Foundation
 
 extension Encodable {

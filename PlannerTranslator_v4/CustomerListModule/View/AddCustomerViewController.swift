@@ -40,21 +40,6 @@ class AddCustomerViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             
-//            nameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
-//            nameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-//            nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-//            nameTextField.heightAnchor.constraint(equalToConstant: 60),
-//
-//            priceTextField.leadingAnchor.constraint(equalTo: nameTextField.leadingAnchor),
-//            priceTextField.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
-//            priceTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor),
-//            priceTextField.heightAnchor.constraint(equalToConstant: 60),
-//
-//            customerTextField.leadingAnchor.constraint(equalTo: priceTextField.leadingAnchor),
-//            customerTextField.trailingAnchor.constraint(equalTo: priceTextField.trailingAnchor),
-//            customerTextField.topAnchor.constraint(equalTo: priceTextField.bottomAnchor),
-//            customerTextField.heightAnchor.constraint(equalToConstant: 60),
-            
             nameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
             nameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
@@ -64,29 +49,21 @@ class AddCustomerViewController: UIViewController {
             infoTextField.trailingAnchor.constraint(equalTo: nameTextField.trailingAnchor),
             infoTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor),
             infoTextField.heightAnchor.constraint(equalToConstant: 60),
-            //infoTextField.bottomAnchor.constraint(equalTo: saveButton.topAnchor),
             
             contact1TextField.leadingAnchor.constraint(equalTo: infoTextField.leadingAnchor),
             contact1TextField.trailingAnchor.constraint(equalTo: infoTextField.trailingAnchor),
             contact1TextField.topAnchor.constraint(equalTo: infoTextField.bottomAnchor),
             contact1TextField.heightAnchor.constraint(equalToConstant: 60),
-            //contact1TextField.bottomAnchor.constraint(equalTo: infoTextField.topAnchor),
             
             contact2TextField.leadingAnchor.constraint(equalTo: contact1TextField.leadingAnchor),
             contact2TextField.trailingAnchor.constraint(equalTo: contact1TextField.trailingAnchor),
             contact2TextField.topAnchor.constraint(equalTo: contact1TextField.bottomAnchor),
             contact2TextField.heightAnchor.constraint(equalToConstant: 60),
-           // contact2TextField.bottomAnchor.constraint(equalTo: saveButton.topAnchor),
-//            
-//            saveButton.leadingAnchor.constraint(equalTo: contact2TextField.leadingAnchor),
-//            saveButton.trailingAnchor.constraint(equalTo: contact2TextField.trailingAnchor),
-//            //saveButton.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor),
-            
             
             saveButton.leadingAnchor.constraint(equalTo: contact2TextField.leadingAnchor),
             saveButton.trailingAnchor.constraint(equalTo: contact2TextField.trailingAnchor),
-            //saveButton.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor),
             saveButton.topAnchor.constraint(equalTo: contact2TextField.bottomAnchor),
+            
         ])
     }
     

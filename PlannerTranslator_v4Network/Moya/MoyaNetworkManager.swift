@@ -1,10 +1,3 @@
-//
-//  MoyaNetworkManager.swift
-//  TableView_v5
-//
-//  Created by Galina Iaroshenko on 20.12.2022.
-//
-
 import Foundation
 import Moya
 
@@ -20,15 +13,12 @@ final class MoyaNetworkManager {
     }
     
     static let shared = MoyaNetworkManager()
-
+    
     func mainRequest<T: WDTargetType>(_ request: T,
-                     withComplition completionHandler: @escaping (ResponseAPI) -> ()) {
+                                      withComplition completionHandler: @escaping (ResponseAPI) -> ()) {
         
         let endpointClosure = { (target: T) -> Endpoint in
-            let defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
-//            var urlComponents = URLComponents(string: target.baseURL)
-//            urlComponents?.path = target.path
-            
+            let defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)            
             let url = (target.baseURL.absoluteString+target.path).removingPercentEncoding ?? ""
             
             return Endpoint(url: url, sampleResponseClosure: defaultEndpoint.sampleResponseClosure,

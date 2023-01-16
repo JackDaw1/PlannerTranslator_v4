@@ -1,4 +1,3 @@
-
 import UIKit
 
 class AddOrderViewController: UIViewController, UIPickerViewDelegate {
@@ -16,13 +15,14 @@ class AddOrderViewController: UIViewController, UIPickerViewDelegate {
         view.backgroundColor = UIColor.white
         
         nameTextField.placeholder = "Название заказа"
+        
         priceTextField.placeholder = "Стоимость"
         priceTextField.keyboardType = UIKeyboardType.numberPad
+        
         customerTextField.placeholder = "Заказчик"
-        //deadlineLabel.text = "Дедлайн: "
+        
         saveButton.setTitleColor(UIColor.black, for: UIControl.State.normal)
         saveButton.setTitleColor(UIColor.gray, for: UIControl.State.selected)
-        
         saveButton.setTitle("Save", for: UIControl.State.normal)
         saveButton.setTitle("Save", for: UIControl.State.selected)
         saveButton.addTarget(self, action: #selector(save), for: UIControl.Event.touchUpInside)
@@ -34,16 +34,9 @@ class AddOrderViewController: UIViewController, UIPickerViewDelegate {
     @objc
     func datePickerValueChanged(_ sender: UIDatePicker){
         
-        // Create date formatter
         let dateFormatter: DateFormatter = DateFormatter()
-        
-        // Set date format
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        // Apply date format
         selectedDate = dateFormatter.string(from: sender.date)
-        
-        //print("Selected value \(selectedDate)")
         
     }
     
@@ -77,17 +70,12 @@ class AddOrderViewController: UIViewController, UIPickerViewDelegate {
             customerTextField.topAnchor.constraint(equalTo: priceTextField.bottomAnchor),
             customerTextField.heightAnchor.constraint(equalToConstant: 60),
             
-            //            pickView.leadingAnchor.constraint(equalTo: customerTextField.leadingAnchor),
-            //            pickView.trailingAnchor.constraint(equalTo: customerTextField.trailingAnchor),
             pickView.topAnchor.constraint(equalTo: customerTextField.bottomAnchor),
             pickView.heightAnchor.constraint(equalToConstant: 60),
-            //pickView.bottomAnchor.constraint(equalTo: saveButton.bottomAnchor),
             pickView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            
             
             saveButton.leadingAnchor.constraint(equalTo: pickView.leadingAnchor),
             saveButton.trailingAnchor.constraint(equalTo: pickView.trailingAnchor),
-            //saveButton.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor),
             saveButton.topAnchor.constraint(equalTo: pickView.bottomAnchor),
         ])
     }

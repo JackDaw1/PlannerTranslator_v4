@@ -1,10 +1,3 @@
-//
-//  PlannerTranslator_v4UITestsLaunchTests.swift
-//  PlannerTranslator_v4UITests
-//
-//  Created by Galina Iaroshenko on 04.01.2023.
-//
-
 import XCTest
 
 final class PlannerTranslator_v4UITestsLaunchTests: XCTestCase {

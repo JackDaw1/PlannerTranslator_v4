@@ -1,10 +1,3 @@
-//
-//  CustomerDetailRouter.swift
-//  PlannerTranslator_v4
-//
-//  Created by Galina Iaroshenko on 06.01.2023.
-//
-
 import UIKit
 
 class CustomerDetailRouter: CustomerDetailRouterProtocol {
@@ -14,6 +7,7 @@ class CustomerDetailRouter: CustomerDetailRouterProtocol {
             fatalError("Invalid view protocol type")
         }
         viewVC.navigationController?.popViewController(animated: true)
+        
     }
     
     static func createCustomerDetailRouterModule(with customer: CustomerItem) -> UIViewController {
@@ -31,7 +25,6 @@ class CustomerDetailRouter: CustomerDetailRouterProtocol {
         
         return customerDetailVC
     }
-
     
 }
 

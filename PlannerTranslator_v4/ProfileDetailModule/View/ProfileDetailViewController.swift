@@ -1,10 +1,3 @@
-//
-//  ProfileDetailViewController.swift
-//  PlannerTranslator_v4
-//
-//  Created by Galina Iaroshenko on 07.01.2023.
-//
-
 import UIKit
 
 class ProfileDetailViewController: UIViewController {
@@ -19,13 +12,8 @@ class ProfileDetailViewController: UIViewController {
     var presenter: ProfileDetailPresenterProtocol?
     var enableForEdit: Bool = false {
         didSet {
-            //            priceTextField.isEnabled = enableForEdit
         }
     }
-    
-    //    @objc func buttonTapped(sender : UIButton) {
-    //                    //Write button action here
-    //                }
     
     private func baseConfigure() {
         view.backgroundColor = UIColor.white
@@ -34,17 +22,10 @@ class ProfileDetailViewController: UIViewController {
         contact1TextField.placeholder = "Введите логин телеграмма"
         contact2TextField.placeholder = "Введите почту"
         
-        //        nameLabel.textColor = UIColor.black
-        //        contact1Label.textColor = UIColor.black
-        //        contact2Label.textColor = UIColor.black
-        
         nameTextField.textColor = UIColor.black
         contact1TextField.textColor = UIColor.black
         contact2TextField.textColor = UIColor.black
         
-        //        priceTextField.text = "Test"
-        //        priceTextField.isEnabled = enableForEdit
-        //priceTextField.isEnabled//доступность для редактирования
     }
     
     func setupConstraints() {
@@ -60,6 +41,7 @@ class ProfileDetailViewController: UIViewController {
         }
         
         NSLayoutConstraint.activate([
+            
             nameTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
             nameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
             nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
@@ -83,9 +65,6 @@ class ProfileDetailViewController: UIViewController {
             shareButton.heightAnchor.constraint(equalToConstant: 60),
             shareButton.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor),
             
-            
-            
-            
         ])
     }
     
@@ -105,9 +84,7 @@ class ProfileDetailViewController: UIViewController {
 
     }
     
-//    @objc private func didTapShareButton() {
-//        self.navigationController?.pushViewController(OrderListViewController(), animated: true)
-//    }
+
     @objc func didTapShareButton(_ sender: Any) {
         let textMyContacts = "Мои контакты: \n"
         let objectsToShare: [Any] = [textMyContacts, nameTextField.text, contact1TextField.text, contact2TextField.text]

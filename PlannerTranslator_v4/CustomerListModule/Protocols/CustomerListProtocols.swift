@@ -1,10 +1,3 @@
-//
-//  CustomerListProtocols.swift
-//  PlannerTranslator_v4
-//
-//  Created by Galina Iaroshenko on 06.01.2023.
-//
-
 import UIKit
 
 protocol CustomerListViewProtocol: class {

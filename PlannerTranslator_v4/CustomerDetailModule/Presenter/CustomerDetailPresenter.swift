@@ -1,10 +1,3 @@
-//
-//  CustomerDetailPresenter.swift
-//  PlannerTranslator_v4
-//
-//  Created by Galina Iaroshenko on 06.01.2023.
-//
-
 import Foundation
 
 class CustomerDetailPresenter: CustomerDetailPresenterProtocol {
@@ -13,7 +6,6 @@ class CustomerDetailPresenter: CustomerDetailPresenterProtocol {
     var router: CustomerDetailRouterProtocol?
     var interactor: CustomerDetailInteractorInputProtocol?
     
-    
     func viewDidLoad() {
         if let customerItem = interactor?.customerItem {
             view?.showCustomer(customerItem)
@@ -21,7 +13,6 @@ class CustomerDetailPresenter: CustomerDetailPresenterProtocol {
     }
     
     func editCustomer(name: String, info: String?, contact1: String?, contact2: String?) {
-        
         interactor?.editCustomer(name: name ?? "", info: info, contact1: contact1, contact2: contact2)
     }
     

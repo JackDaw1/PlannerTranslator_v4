@@ -1,10 +1,3 @@
-//
-//  OrderListMocks.swift
-//  PlannerTranslator_v4Tests
-//
-//  Created by Galina Iaroshenko on 09.01.2023.
-//
-
 import UIKit
 
 final class OrderListPresenterMock: OrderListPresenterProtocol {

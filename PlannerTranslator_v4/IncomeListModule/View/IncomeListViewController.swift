@@ -1,11 +1,3 @@
-//
-//  IncomeListViewController.swift
-//  PlannerTranslator_v4
-//
-//  Created by Galina Iaroshenko on 07.01.2023.
-//
-
-
 import UIKit
 
 struct SectionIncomesItem {
@@ -63,15 +55,11 @@ class IncomeListViewController: UITableViewController {
         }
         
         let income = sectionsArray[indexPath.section].incomes[indexPath.row]
-//        cell.income = income
         cell.order = income
         return cell
     }
-//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        sectionsArray[section].date.toString()
-//    }
+
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        //sectionsArray[section].date.toString()+": "+sectionsArray[section].sum
         if (Double(sectionsArray[section].sum) != 0.0) {
             return "Общий доход: " + sectionsArray[section].sum
         }
@@ -80,9 +68,7 @@ class IncomeListViewController: UITableViewController {
             return nil
         }
     }
-    //    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    //        <#code#>
-    //    }
+
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }

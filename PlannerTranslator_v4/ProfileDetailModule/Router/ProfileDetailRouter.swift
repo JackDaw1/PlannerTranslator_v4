@@ -1,10 +1,3 @@
-//
-//  ProfileDetailRouter.swift
-//  PlannerTranslator_v4
-//
-//  Created by Galina Iaroshenko on 07.01.2023.
-//
-
 import UIKit
 
 class ProfileDetailRouter: ProfileDetailRouterProtocol {
@@ -17,7 +10,7 @@ class ProfileDetailRouter: ProfileDetailRouterProtocol {
     }
     
     static func createProfileDetailRouterModule() -> UIViewController {
-
+        
         let profileDetailVC = ProfileDetailViewController()
         let presenter: ProfileDetailPresenterProtocol & ProfileDetailInteractorOutputProtocol = ProfileDetailPresenter()
         profileDetailVC.presenter = presenter
@@ -28,7 +21,7 @@ class ProfileDetailRouter: ProfileDetailRouterProtocol {
         presenter.interactor = interactor
         let router: ProfileDetailRouterProtocol = ProfileDetailRouter()
         presenter.router = router
-
+        
         return profileDetailVC
     }
     

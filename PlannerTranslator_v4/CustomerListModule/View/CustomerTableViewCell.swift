@@ -1,9 +1,3 @@
-//
-//  CustomerTableViewCell.swift
-//  PlannerTranslator_v4
-//
-//  Created by Galina Iaroshenko on 06.01.2023.
-
 import UIKit
 
 class CustomerTableViewCell: UITableViewCell {
@@ -16,14 +10,11 @@ class CustomerTableViewCell: UITableViewCell {
             nameOfArticleLabel.text = nameOfArticle
             
             if let customer = customerItem.info {
-                //profileImageView.image = UIImage(named: customer)
                 customerDetailedLabel.text = " \(customer) "
             }
             
             if let price = customerItem.contact1 {
-                //countryImageView.image = UIImage(named: country)
                 priceDetailedLabel.text = " \(price) "
-                
             }
         }
     }
@@ -31,14 +22,14 @@ class CustomerTableViewCell: UITableViewCell {
     let containerView:UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.clipsToBounds = true // this will make sure its children do not go out of the boundary
+        view.clipsToBounds = true
         return view
     }()
     
     let profileImageView:UIImageView = {
         let img = UIImageView()
-        img.contentMode = .scaleAspectFill // image will never be strecthed vertially or horizontally
-        img.translatesAutoresizingMaskIntoConstraints = false // enable autolayout
+        img.contentMode = .scaleAspectFill
+        img.translatesAutoresizingMaskIntoConstraints = false
         img.layer.cornerRadius = 35
         img.clipsToBounds = true
         return img

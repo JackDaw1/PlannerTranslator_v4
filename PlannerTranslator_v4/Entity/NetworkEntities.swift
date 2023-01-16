@@ -1,10 +1,3 @@
-//
-//  Network.swift
-//  PlannerTranslator_v4
-//
-//  Created by Galina Iaroshenko on 10.01.2023.
-//
-
 import Foundation
 
 protocol ATProtocol: Codable {
@@ -56,13 +49,13 @@ struct SubMoyRequest<T: Codable>: Codable {
             let jsonString = String(data: jsonData, encoding: .utf8)!
             
             if let data = jsonString.data(using: .utf8) {
-                    do {
-                        return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] ?? Dictionary<String, Any>()
-                    } catch {
-                        print(error.localizedDescription)
-                    }
+                do {
+                    return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] ?? Dictionary<String, Any>()
+                } catch {
+                    print(error.localizedDescription)
                 }
-                return Dictionary<String, Any>()
+            }
+            return Dictionary<String, Any>()
         } catch { print(error) }
         return Dictionary<String, Any>()
     }

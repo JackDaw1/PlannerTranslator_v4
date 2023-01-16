@@ -1,10 +1,3 @@
-//
-//  MoyaRequestType.swift
-//  TableView_v5
-//
-//  Created by Galina Iaroshenko on 20.12.2022.
-//
-
 import Foundation
 import Moya
 
@@ -104,11 +97,11 @@ extension RequestType: WDTargetType {
     
     var headers: [String : String]? {
         var headersDictionary = MoyaNetworkManager.shared.headers
-//        switch self {
-//        default:
-//            headersDictionary["content-type"] = "application/json-patch+json"
-//            break
-//        }
+        //        switch self {
+        //        default:
+        //            headersDictionary["content-type"] = "application/json-patch+json"
+        //            break
+        //        }
         return  headersDictionary
     }
 }

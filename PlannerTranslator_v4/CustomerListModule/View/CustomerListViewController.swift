@@ -1,10 +1,3 @@
-//
-//  ProfileViewController.swift
-//  PlannerTranslator_v4
-//
-//  Created by Galina Iaroshenko on 05.01.2023.
-//
-
 import UIKit
 
 class CustomerListViewController: UITableViewController {
@@ -46,7 +39,7 @@ class CustomerListViewController: UITableViewController {
         else {
             return UITableViewCell()
         }
-         
+        
         let customer = customers[indexPath.row]
         cell.customer = customer
         return cell
@@ -77,15 +70,15 @@ class CustomerListViewController: UITableViewController {
         })
     }
     
-@objc
-func addTapped(_ sender: Any) {
-    var addVC = AddCustomerViewController()
-    addVC.handler = { [weak self] newCustomer in
-        guard let self = self else { return }
-        self.presenter?.addCustomer(newCustomer)
-    }
-    addVC.modalPresentationStyle = .formSheet
-    present(addVC, animated: true)
+    @objc
+    func addTapped(_ sender: Any) {
+        var addVC = AddCustomerViewController()
+        addVC.handler = { [weak self] newCustomer in
+            guard let self = self else { return }
+            self.presenter?.addCustomer(newCustomer)
+        }
+        addVC.modalPresentationStyle = .formSheet
+        present(addVC, animated: true)
     }
     
 }

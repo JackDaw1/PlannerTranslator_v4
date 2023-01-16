@@ -24,10 +24,6 @@ struct OrderItem: ATProtocol {
     var customer: String?
     var time: Int64? //!!
     
-//    enum OrderKeys: CodingKey {
-//        case link, deadline, made, paid, name, price, customer
-//    }
-    
     init(
         idAT: String? = nil,
         link: String?,
@@ -39,16 +35,16 @@ struct OrderItem: ATProtocol {
         numberOfSigns: Int64?,
         customer:String?,
         time: Int64? = nil) {
-        self.idAT = idAT
-        self.deadline = deadline
-        self.made = made
-        self.paid = paid
-        self.name = name
-        self.price = price
-        self.numberOfSigns = numberOfSigns
-        self.customer = customer
-        self.time = time
-    }
+            self.idAT = idAT
+            self.deadline = deadline
+            self.made = made
+            self.paid = paid
+            self.name = name
+            self.price = price
+            self.numberOfSigns = numberOfSigns
+            self.customer = customer
+            self.time = time
+        }
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: OrderKeys.self)
@@ -88,7 +84,6 @@ struct OrderItem: ATProtocol {
     }
     
     public init(order: Order) {
-//        self.idAT = order.idAT
         self.link = order.link
         self.deadline = order.deadline?.toString()
         self.made = order.made

@@ -1,10 +1,3 @@
-//
-//  IncomeTableViewCell.swift.swift
-//  PlannerTranslator_v4
-//
-//  Created by Galina Iaroshenko on 07.01.2023.
-//
-
 import UIKit
 
 class IncomeTableViewCell: UITableViewCell {
@@ -21,7 +14,6 @@ class IncomeTableViewCell: UITableViewCell {
             }
             
             if let price = OrderItem.price {
-                //countryImageView.image = UIImage(named: country)
                 priceDetailedLabel.text = " \(price) "
                 
             }

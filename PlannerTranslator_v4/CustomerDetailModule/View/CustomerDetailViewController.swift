@@ -97,8 +97,6 @@ extension CustomerDetailViewController: CustomerDetailViewProtocol {
         infoLabel.text = "Контактное лицо: " + (customer.info ?? "")
         contact1Label.text = "Контакт 1: " + (customer.contact1 ?? "")
         contact2Label.text = "Контакт 2: " + (customer.contact2 ?? "")
-        //timeLabel.text = String(order.time)
-        //customerLabel.text = order.customer
     }
     
 }

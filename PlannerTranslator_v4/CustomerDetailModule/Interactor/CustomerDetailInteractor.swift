@@ -9,9 +9,6 @@ import Foundation
 
 class CustomerDetailInteractor: CustomerDetailInteractorInputProtocol {
     
-    
-    
-    
     weak var presenter: CustomerDetailInteractorOutputProtocol?
     var customerStore = CustomerAPI.shared
     var customerItem: CustomerItem?
@@ -25,7 +22,6 @@ class CustomerDetailInteractor: CustomerDetailInteractorInputProtocol {
     func editCustomer(name: String, info: String?, contact1: String?, contact2: String?) {
         guard let customerItem = customerItem else { return }
         customerItem.name = name
-        //orderItem.content = content
         presenter?.didEditCustomer(customerItem)
     }
     

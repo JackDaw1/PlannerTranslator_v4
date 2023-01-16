@@ -71,7 +71,7 @@ class OrderDetailViewController: UIViewController {
             madeButton.topAnchor.constraint(equalTo: timeLabel.bottomAnchor),
             madeButton.heightAnchor.constraint(equalToConstant: 60),
             madeButton.bottomAnchor.constraint(lessThanOrEqualTo: view.bottomAnchor),
-     
+            
         ])
     }
     
@@ -90,33 +90,33 @@ class OrderDetailViewController: UIViewController {
         
         titleLabel.numberOfLines = 0
         titleLabel.font = UIFont.boldSystemFont(ofSize: 20.0)
-
+        
     }
     
     @objc private func didTapMadeButton() {
         presenter?.editOrder(link: nil, deadline: nil, made: true, paid: nil, name: nil, price: nil, numberOfSigns: nil, customer: nil, time: nil)
     }
     
-//    func deleteTapped(_ sender: Any) {
-//        presenter?.deleteOrder()
-//    }
-//
-//    func editTapped(_ sender: Any) {
-//        let alertController = UIAlertController(title: "Edit Order Item", message: "Enter title and content", preferredStyle: .alert)
-//
-//        alertController.addTextField { $0.text = self.titleLabel.text }
-//        alertController.addTextField { $0.text = self.contentLabel.text }
-//        alertController.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { [weak self](_) in
-//            let titleText = alertController.textFields![0].text ?? ""
-//            let contentText = alertController.textFields![1].text ?? ""
-//            guard !titleText.isEmpty else { return }
-//            self?.presenter?.editOrder(title: titleText, content: contentText)
-//        }))
-//
-//        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-//        present(alertController, animated: true, completion: nil)
-//
-//    }
+    //    func deleteTapped(_ sender: Any) {
+    //        presenter?.deleteOrder()
+    //    }
+    //
+    //    func editTapped(_ sender: Any) {
+    //        let alertController = UIAlertController(title: "Edit Order Item", message: "Enter title and content", preferredStyle: .alert)
+    //
+    //        alertController.addTextField { $0.text = self.titleLabel.text }
+    //        alertController.addTextField { $0.text = self.contentLabel.text }
+    //        alertController.addAction(UIAlertAction(title: "Confirm", style: .default, handler: { [weak self](_) in
+    //            let titleText = alertController.textFields![0].text ?? ""
+    //            let contentText = alertController.textFields![1].text ?? ""
+    //            guard !titleText.isEmpty else { return }
+    //            self?.presenter?.editOrder(title: titleText, content: contentText)
+    //        }))
+    //
+    //        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+    //        present(alertController, animated: true, completion: nil)
+    //
+    //    }
     
 }
 
@@ -126,26 +126,13 @@ extension OrderDetailViewController: OrderDetailViewProtocol {
         
         titleLabel.text = order.name
         customerLabel.text = "Заказчик: " + (order.customer ?? "")
-
+        
         if order.price != nil {
             priceLabel.text = "Стоимость: " + String(order.price!)
         }
         //подправить с экстеншионом тустринг
         deadlineLabel.text = "Дата сдачи: " + (order.deadline ?? "")
         
-
-//        if order.time != nil {
-//            timeLabel.text = "timeLabel:" + String(order.time!)
-//        }
-//        if order.price != nil {
-//            priceLabel.text = String(order.price!)
-//        }
-//        if order.price != nil {
-//            priceLabel.text = String(order.price!)
-//        }
-//        if order.price != nil {
-//            priceLabel.text = String(order.price!)
-//        }
     }
     
 }

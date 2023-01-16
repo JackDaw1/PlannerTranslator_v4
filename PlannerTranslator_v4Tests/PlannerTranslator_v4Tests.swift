@@ -1,12 +1,4 @@
-//
-//  PlannerTranslator_v4Tests.swift
-//  PlannerTranslator_v4Tests
-//
-//  Created by Galina Iaroshenko on 04.01.2023.
-//
-
 import XCTest
-//import CoreData
 
 @testable import PlannerTranslator_v4
 

@@ -1,7 +1,7 @@
 import Foundation
 
 class OrderDetailPresenter: OrderDetailPresenterProtocol {
-
+    
     weak var view: OrderDetailViewProtocol?
     var router: OrderDetailRouterProtocol?
     var interactor: OrderDetailInteractorInputProtocol?

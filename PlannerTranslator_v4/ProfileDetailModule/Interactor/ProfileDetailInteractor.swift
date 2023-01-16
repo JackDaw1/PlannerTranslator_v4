@@ -9,7 +9,6 @@ class ProfileDetailInteractor: ProfileDetailInteractorInputProtocol {
     func editProfile(name: String?, contact1: String?, contact2: String?) {
         guard let profileItem = profileItem else { return }
         profileItem.name = name!
-        //orderItem.content = content
         presenter?.didEditProfile(profileItem)
     }
 }

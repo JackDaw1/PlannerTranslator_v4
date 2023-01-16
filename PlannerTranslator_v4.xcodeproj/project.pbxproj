@@ -45,7 +45,6 @@
 		FE4DE177296BCCA90055FCE1 /* OrderListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE9552EC29668E1A001CE332 /* OrderListProtocols.swift */; };
 		FE91B1B6296564900063ED03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE91B1B5296564900063ED03 /* AppDelegate.swift */; };
 		FE91B1B8296564900063ED03 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE91B1B7296564900063ED03 /* SceneDelegate.swift */; };
-		FE91B1BA296564900063ED03 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE91B1B9296564900063ED03 /* ViewController.swift */; };
 		FE91B1BD296564900063ED03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE91B1BB296564900063ED03 /* Main.storyboard */; };
 		FE91B1C0296564900063ED03 /* PlannerTranslator_v4.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE91B1BE296564900063ED03 /* PlannerTranslator_v4.xcdatamodeld */; };
 		FE91B1C2296564910063ED03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE91B1C1296564910063ED03 /* Assets.xcassets */; };
@@ -137,7 +136,6 @@
 		FE91B1B2296564900063ED03 /* PlannerTranslator_v4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlannerTranslator_v4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE91B1B5296564900063ED03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE91B1B7296564900063ED03 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FE91B1B9296564900063ED03 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE91B1BC296564900063ED03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE91B1BF296564900063ED03 /* PlannerTranslator_v4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PlannerTranslator_v4.xcdatamodel; sourceTree = "<group>"; };
 		FE91B1C1296564910063ED03 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -322,17 +320,16 @@
 		FE91B1B4296564900063ED03 /* PlannerTranslator_v4 */ = {
 			isa = PBXGroup;
 			children = (
-				FE95535A2969CCD3001CE332 /* IncomeListModule */,
 				FE9552E629668E1A001CE332 /* OrderListModule */,
-				FE9553362969665F001CE332 /* ProfileDetailModule */,
 				FE9552F229668E1A001CE332 /* OrderDetailModule */,
+				FE95535A2969CCD3001CE332 /* IncomeListModule */,
+				FE9553362969665F001CE332 /* ProfileDetailModule */,
 				FE95532A2967CBE4001CE332 /* CustomerListModule */,
 				FE9553242967CB6C001CE332 /* CustomerDetailModule */,
 				FE91B1E82965657A0063ED03 /* Entity */,
 				FE9552F129668E1A001CE332 /* MainTabbarViewController.swift */,
 				FE91B1B5296564900063ED03 /* AppDelegate.swift */,
 				FE91B1B7296564900063ED03 /* SceneDelegate.swift */,
-				FE91B1B9296564900063ED03 /* ViewController.swift */,
 				FE9553342967F208001CE332 /* Helper.swift */,
 				FE91B1BB296564900063ED03 /* Main.storyboard */,
 				FE91B1C1296564910063ED03 /* Assets.xcassets */,
@@ -923,7 +920,6 @@
 				FE95530929668EBD001CE332 /* OrderAPI.swift in Sources */,
 				FE9553232967C9D7001CE332 /* CustomerListInteractor.swift in Sources */,
 				FE91B1C0296564900063ED03 /* PlannerTranslator_v4.xcdatamodeld in Sources */,
-				FE91B1BA296564900063ED03 /* ViewController.swift in Sources */,
 				FE95534929698A5E001CE332 /* ProfileDetailRouter.swift in Sources */,
 				FE9552FF29668E1A001CE332 /* OrderListProtocols.swift in Sources */,
 				FE95530D2966A036001CE332 /* AddOrderViewController.swift in Sources */,

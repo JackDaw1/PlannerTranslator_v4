@@ -1,4 +1,3 @@
-
 import UIKit
 
 class OrderListViewController: UITableViewController {
@@ -71,9 +70,7 @@ class OrderListViewController: UITableViewController {
             sectionsArray[section].date.toString()
         
     }
-    //    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-    //        <#code#>
-    //    }
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sectionObject = sectionsArray[indexPath.section]
         let order = sectionObject.orders[indexPath.row]
