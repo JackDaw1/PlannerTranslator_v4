@@ -18,7 +18,7 @@ final class MoyaNetworkManager {
                                       withComplition completionHandler: @escaping (ResponseAPI) -> ()) {
         
         let endpointClosure = { (target: T) -> Endpoint in
-            let defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)            
+            let defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
             let url = (target.baseURL.absoluteString+target.path).removingPercentEncoding ?? ""
             
             return Endpoint(url: url, sampleResponseClosure: defaultEndpoint.sampleResponseClosure,

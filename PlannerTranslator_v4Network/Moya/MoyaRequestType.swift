@@ -14,7 +14,6 @@ protocol WDTargetType: TargetType, Hashable {
     
 }
 
-
 extension RequestType: WDTargetType {
     static func == (lhs: RequestType, rhs: RequestType) -> Bool {
         lhs.path == rhs.path
