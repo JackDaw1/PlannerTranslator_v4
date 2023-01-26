@@ -107,6 +107,7 @@ class OrderListViewController: UITableViewController {
     
 }
 
+//хранит ссылку на ведущего для передачи пользовательского ввода и просмотра события жизненного цикла презентеру для реагирования.
 extension OrderListViewController: OrderListViewProtocol {
     
     func showOrders(_ sections: [SectionOrdersItem]) {

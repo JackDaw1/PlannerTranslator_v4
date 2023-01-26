@@ -2,8 +2,11 @@ import Foundation
 
 class OrderListPresenter: OrderListPresenterProtocol {
     
+    // хранит слабую ссылку на TodoListViewProtocol, чтобы он мог обновлять пользовательский интерфейс.
     weak var view: OrderListViewProtocol?
+    // хранит ссылку на TodoListInteractorInputProtocol, поэтому презентер может передать пользовательский ввод для получения или изменения данных через интерактор
     var interactor: OrderListInteractorInputProtocol?
+    //Он также хранит объект TodoListRouterProtocol, чтобы он мог перейти к TodoDetailModule, когда пользователь выбирает TodoItem в табличном представлении.
     var router: OrderListRouterProtocol?
     
     func showOrderDetail(_ order: OrderItem) {
@@ -17,6 +20,7 @@ class OrderListPresenter: OrderListPresenterProtocol {
         interactor?.saveOrder(order)
     }
     
+    //При реализации TodoPresenterProtocol представление будет вызывать представление презентатора viewWillAppear, когда представление появится на экране.
     func viewWillAppear() {
         interactor?.retrieveOrders()
     }

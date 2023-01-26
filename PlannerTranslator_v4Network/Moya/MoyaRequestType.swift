@@ -1,8 +1,12 @@
 import Foundation
 import Moya
 
+/*согласно принципу разделения интерфейсов лучше не помещать все запросы в один сервис
+ RequestType — это наш будущий сервис со всеми запросами.
+ */
 public typealias RequestParametersType = (apiStringURL: String, body: [String: Any]?)
 
+//типы запросов
 enum RequestType {
     case orders
     case ordersDetail(String)
@@ -10,6 +14,7 @@ enum RequestType {
     case edit(OrderItem)
 }
 
+//TargetType - Протокол, используемый для определения спецификаций, необходимых для файла MoyaProvider.
 protocol WDTargetType: TargetType, Hashable {
     
 }
@@ -23,12 +28,12 @@ extension RequestType: WDTargetType {
         hasher.combine(path)
         hasher.combine(method)
     }
-    
+    //адрес сервера, на котором лежит RESTful API
     var baseURL: URL {
         //https://api.airtable.com/v0/appPMjoCgIPwBqrPL/PlannerTranslator?maxRecords=3&view=Order
         URL(string: "https://api.airtable.com/v0/appPMjoCgIPwBqrPL/")!
     }
-    
+    //роуты запросов
     var path: String {
         switch self {
         case .orders:
@@ -41,7 +46,7 @@ extension RequestType: WDTargetType {
             return "PlannerTranslator"
         }
     }
-    
+    // метод, который мы посылаем. Moya берёт все методы из Alamofire.
     var method: Moya.Method {
         switch self {
         case .orders, .ordersDetail:
@@ -53,6 +58,8 @@ extension RequestType: WDTargetType {
         }
     }
     
+    //1) кодировка параметров, также берётся из Alamofire.
+    //2) описание задач, которые буду выполняться
     var task: Task {
         switch self {
         case .orders:
