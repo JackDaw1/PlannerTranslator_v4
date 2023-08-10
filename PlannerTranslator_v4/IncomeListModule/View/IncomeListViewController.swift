@@ -72,7 +72,6 @@ class IncomeListViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         UITableView.automaticDimension
     }
-    
 }
 
 extension IncomeListViewController: IncomeListViewProtocol {
